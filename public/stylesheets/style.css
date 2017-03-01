@@ -1,5 +1,17 @@
 * {
   font-family: Arial, sans-serif;
+  background-color: grey;
+}
+
+div#logo {
+  display: inline;
+  float: left;
+}
+
+div#user {
+  display: inline;
+  float: left;
+  color: blue;
 }
 
 h1 {

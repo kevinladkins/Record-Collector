@@ -5,9 +5,19 @@
     <link href = "/stylesheets/style.css" type = "text/css" rel = "stylesheet">
   </head>
   <body>
-
-   <h1>Record Collector</h1>
-   <%=yield%>
+    <header>
+      <div id = "header">
+        <div id = "logo">
+         <h1>Record Collector</h1>
+       </div>
+       <div id = "user">
+         <%if logged_in?%>
+           <%=current_user.username%><br>
+           <a href = "/logout">Log Out</a>
+         <%end%>
+       </div>
+     </div>
+         <%=yield%>
 
   </body>
 </html>

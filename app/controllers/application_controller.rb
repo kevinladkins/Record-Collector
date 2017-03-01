@@ -1,4 +1,6 @@
 require_relative '../../config/environment'
+#require_relative './records_controller.rb'
+#require_relative './users_controller.rb'
 
 class ApplicationController < Sinatra::Base
   configure do
@@ -9,7 +11,11 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/' do
+    if logged_in?
+      redirect "/users/#{current_user.slug}"
+    else
     erb :index
+    end
   end
 
   get '/login' do
@@ -33,7 +39,7 @@ class ApplicationController < Sinatra::Base
   post '/signup' do
     if params[:username] == "" || params[:password] == "" || params[:name] == "" || params[:email] == ""
       redirect '/signup'
-    elsif User.find_by(params[:username], params[:password])
+    elsif User.find_by(username: params[:username], email: params[:email])
       redirect '/login'
     else
     user = User.create(params)
@@ -44,6 +50,15 @@ class ApplicationController < Sinatra::Base
 
   get '/error' do
     erb :error
+  end
+
+  get '/logout' do
+    if !logged_in?
+      redirect '/'
+    else
+      session.clear
+      redirect '/'
+    end
   end
 
   helpers do

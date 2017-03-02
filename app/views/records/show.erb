@@ -28,6 +28,10 @@
     <td><strong>Format: </strong></td>
     <td><%= @record.format %></td>
   </tr>
+  <tr>
+    <td><strong>RPM: </strong></td>
+    <td><%= @record.rpm %></td>
+  </tr>
 <table>
   <% if current_user.record_ids.include?(@record.id)%>
   <form action = "/records/<%=@record.slug%>/edit">

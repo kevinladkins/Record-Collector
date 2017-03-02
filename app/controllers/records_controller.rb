@@ -43,7 +43,6 @@ use Rack::Flash
   post '/records/:slug/edit' do
     record = Record.find_by_slug(params[:slug])
     record.update(params[:record])
-    binding.pry
     find_or_create(params, record)
     record.save
     redirect "/records/#{record.slug}"

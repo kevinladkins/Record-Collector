@@ -20,10 +20,15 @@
 <%end%>
 
 <%if @mode == "Artists"%>
-
-  <p>COMING SOON</p>
-
+  <%@user.artists.order(name: :asc).each do |a|%>
+  <%=a.name%><br>
+  Records:<br>
+  <%records = @user.records.where("artist_id == #{a.id}").map {|r| r.name}%>
+  <%records.each do |r|%>
+    <%=r%>
+    <%end%>
   <%end%>
+<%end%>
 
 <%if @mode == "Labels"%>
 

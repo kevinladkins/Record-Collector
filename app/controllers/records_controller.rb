@@ -32,13 +32,11 @@ use Rack::Flash
 
   get '/records/:slug' do
     @record = find_by_slug(params[:slug])
-    binding.pry
     erb :'records/show'
   end
 
   get '/records/:slug/edit' do
     @record = find_by_slug(params[:slug])
-    binding.pry
     erb :'records/edit'
   end
 

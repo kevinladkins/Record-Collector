@@ -16,7 +16,7 @@ class RecordsController < ApplicationController
   end
 
   post '/records/new' do
-    record = Record.create(params[:record])
+    record = Record.find_or_create_by(params[:record])
     find_or_create(params, record)
     record.save
     redirect "/records/#{record.slug}"
@@ -29,12 +29,14 @@ class RecordsController < ApplicationController
   end
 
   get '/records/:slug/edit' do
-    @record = Record.find_by_slug(params[:slug])
+    @record = find_by_slug(params[:slug])
+    binding.pry
     erb :'records/edit'
   end
 
   post '/records/:slug/edit' do
-    record = Record.update(params[:record])
+    record = Record.find_by_slug(params[:slug])
+    record.update(params[:record])
     binding.pry
     find_or_create(params, record)
     record.save
@@ -47,13 +49,13 @@ class RecordsController < ApplicationController
     end
 
     def find_or_create(params, record)
-      if params[:artist] != ""
+      if !params[:artist] == " "
         record.artist_id = Artist.find_or_create_by(name: params[:artist][:name]).id
         current_user.records << record
         current_user.save
         record.save
       end
-      if params[:label] != ""
+      if !params[:label] == " "
         record.label_id = Label.find_or_create_by(name: params[:label][:name]).id
         record.save
       end

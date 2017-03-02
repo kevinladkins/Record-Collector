@@ -1,8 +1,0 @@
-<h2>Your Records</h2>
-<form action = "/records/new">
-  <input type = "submit" value = "Add New Record">
-</form></br>
-
-<%@user.records.order(name: :asc).each do |r|%>
-<a href = "/records/<%=r.slug%>"><%=r.name%></a><br>
-<%end%>

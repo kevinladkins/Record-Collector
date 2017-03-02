@@ -20,27 +20,6 @@ class UsersController < ApplicationController
     erb :'users/index'
   end
 
-  get '/users/:slug/records' do
-    if !logged_in?
-      redirect '/login'
-    else
-      @user = current_user
-      erb :'users/show/by_record'
-    end
-  end
-
-  get '/users/:slug/artists' do
-    if !logged_in?
-      redirect '/login'
-    else
-      @user = current_user
-      erb :'users/show/by_artist'
-    end
-  end
-
-  get '/users/:slug/labels' do
-      erb :'users/show/by_label'
-  end
 
   post '/users/:slug/delete' do
     record = RecordUser.find_by(user_id: current_user.id, record_id: params[:record_id])

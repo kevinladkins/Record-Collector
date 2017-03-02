@@ -1,10 +1,4 @@
-<h2>Welcome, <%=@user.name%></h2>
-
-
-<h2>Your Records</h2>
-<form action = "/records/new">
-  <input type = "submit" value = "Add New Record">
-</form></br>
+<h2>Your Collection</h2>
 <form action = "/users/<%=@user.slug%>" method = "post">
   <label>Mode:
   <input type = "radio" name = "mode" value = "Records" <%if @mode == "Records"%>checked = "checked"<%end%> >Records</input>
@@ -12,12 +6,16 @@
   <input type = "radio" name = "mode" value = "Labels" <%if @mode == "Labels"%>checked = "checked"<%end%>>Labels</input>
   <input type = "submit" value = "Change Mode">
 </form><br></br>
+<form action = "/records/new">
+  <input type = "submit" value = "Add New Record">
+</form></br>
+
 
 
 
 <%if @mode == "Records"%>
   <%@user.records.order(name: :asc).each do |r|%>
-  <a href = "/records/<%=r.slug%>"><%=r.name%></a><br>
+  <a href = "/records/<%=r.slug%>"><%=r.name%></a> -- <%=r.artist.name%><br>
   <%end%>
 <%end%>
 

@@ -1,3 +1,7 @@
 <%@user.records.order(name: :asc).each do |r|%>
-<a href = "/records/<%=r.slug%>"><%=r.name%>  </a><br>
+<form action = "/users/<%=@user.slug%>/delete" method= "post">
+<a href = "/records/<%=r.slug%>"><%=r.name%></a>
+   <input type = "hidden" name = "record_id" value = "<%=r.id%>">
+   <input type = "submit" value = "delete">
+</form><br>
 <%end%>

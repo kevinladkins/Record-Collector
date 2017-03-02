@@ -34,6 +34,11 @@ class UsersController < ApplicationController
       erb :'users/show/by_label'
   end
 
+  post '/users/:slug/delete' do
+    record = RecordUser.find_by(user_id: current_user.id, record_id: params[:record_id])
+    record.destroy
+  end
+
 
 
 

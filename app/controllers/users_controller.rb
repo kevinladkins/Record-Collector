@@ -12,26 +12,26 @@ class UsersController < ApplicationController
     end
   end
 
-  get 'users/:slug/records' do
+  get '/users/:slug/records' do
     if !logged_in?
       redirect '/login'
     else
       @user = current_user
-      erb :'users/show/by_record.erb'
+      erb :'users/show/by_record'
     end
   end
 
-  get 'users/:slug/artists' do
+  get '/users/:slug/artists' do
     if !logged_in?
       redirect '/login'
     else
       @user = current_user
-      erb :'users/show/by_artist.erb'
+      erb :'users/show/by_artist'
     end
   end
 
-  get 'users/:slug/labels' do
-      erb :'users/show/by_label.erb'
+  get '/users/:slug/labels' do
+      erb :'users/show/by_label'
   end
 
 

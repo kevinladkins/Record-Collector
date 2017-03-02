@@ -1,0 +1,28 @@
+<h2><%=@record.name%></h2>
+
+<table>
+  <!-- <tr>
+    <th>Name</th>
+    <th>Year Completed</th>
+  </tr> -->
+  <tr>
+    <td>Artist: </td>
+    <td><%= @record.artist %></td>
+  </tr>
+  <tr>
+    <td>Release Year: </td>
+    <td><%= @record.release_year %></td>
+  </tr>
+  <tr>
+    <td>Label: </td>
+    <td><%= @record.label %></td>
+  </tr>
+  <tr>
+    <td>Type: </td>
+    <td><%= @record.type %></td>
+  </tr>
+  <tr>
+    <td>Format: </td>
+    <td><%= @record.format %></td>
+  </tr>
+<table>

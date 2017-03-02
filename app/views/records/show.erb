@@ -29,6 +29,10 @@
     <td><%= @record.format %></td>
   </tr>
 <table>
+  <% if current_user.record_ids.include?(@record.id)%>
   <form action = "/records/<%=@record.slug%>/edit">
     <input type = "submit" value = "Edit Song">
   </form>
+  <%else%>
+  <p>Add to your collection</p>
+  <%end%>

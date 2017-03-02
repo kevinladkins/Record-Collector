@@ -34,8 +34,6 @@ class UsersController < ApplicationController
     else
       record = Record.find(params[:record_id])
       current_user.records << record
-      record.users << current_user
-      record.save
       current_user.save
       flash[:message] = "#{record.name} has been added to your collection."
       redirect "/users/#{current_user.slug}"

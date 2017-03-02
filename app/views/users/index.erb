@@ -16,10 +16,8 @@
 </form></br>
 
 
-
-
 <%if @mode == "Records"%>
-  <%@user.records.order(name: :asc).each do |r|%>
+  <%@user.records.order(name: :asc).uniq.each do |r|%>
   <a href = "/records/<%=r.slug%>"><%=r.name%></a> -- <%=r.artist.name%><br>
   <%end%>
 <%end%>

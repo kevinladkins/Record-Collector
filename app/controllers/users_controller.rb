@@ -6,8 +6,10 @@ class UsersController < ApplicationController
   get '/users/:slug' do
     if !logged_in?
       redirect '/login'
+    else
     @user = User.find_by_slug(params[:slug])
     erb :'users/index'
+    end
   end
 
   get 'users/:slug/records' do
@@ -29,7 +31,7 @@ class UsersController < ApplicationController
   end
 
   get 'users/:slug/labels' do
-      erb :'users/show/by_artist.erb'
+      erb :'users/show/by_label.erb'
   end
 
 

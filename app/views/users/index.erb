@@ -1,1 +1,8 @@
 <h2>Welcome, <%=@user.name%></h2>
+
+<h3>What would you like to do?</h3>
+<a href = "/users/<%=@user.slug%>/records">View collection</a>
+<a href = "/users/<%=@user.slug%>/artists">View collection by Artist</a>
+<a href = "/users/<%=@user.slug%>/labels">View collection by Label</a>
+<a href = "/records/new">Add a New Record</a>
+<a>Search Record Database</a>

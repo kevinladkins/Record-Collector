@@ -23,7 +23,7 @@ class RecordsController < ApplicationController
   end
 
   get '/records/:slug' do
-    @record = Record.find_by_slug(params[:slug])
+    @record = find_by_slug(params[:slug])
     binding.pry
     erb :'records/show'
   end

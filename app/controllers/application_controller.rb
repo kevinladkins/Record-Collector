@@ -19,7 +19,11 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/login' do
+    if logged_in?
+      redirect "/users/#{current_user.slug}"
+    else
     erb :'/users/login'
+    end
   end
 
   post '/login' do
@@ -33,7 +37,11 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/signup' do
+    if logged_in?
+      redirect "/users/#{current_user.slug}"
+    end
     erb :'/users/signup'
+    else
   end
 
   post '/signup' do

@@ -1,8 +1,33 @@
 <h2>Welcome, <%=@user.name%></h2>
 
-<h3>What would you like to do?</h3>
-<a href = "/users/<%=@user.slug%>/records">View collection</a><br></br>
-<a href = "/users/<%=@user.slug%>/artists">View collection by Artist</a><br></br>
-<a href = "/users/<%=@user.slug%>/labels">View collection by Label</a><br></br>
-<a href = "/records/new">Add a New Record</a><br></br>
-<a>Search Record Database</a>
+
+<h2>Your Records</h2>
+<form action = "/records/new">
+  <input type = "submit" value = "Add New Record">
+</form></br>
+<form action = "/users/<%=@user.slug%>" method = "post">
+  <label>Mode:
+  <input type = "radio" name = "mode" value = "Records" <%if @mode == "Records"%>checked = "checked"<%end%> >Records</input>
+  <input type = "radio" name = "mode" value = "Artists" <%if @mode == "Artists"%>checked = "checked"<%end%>>Artists</input>
+  <input type = "radio" name = "mode" value = "Labels" <%if @mode == "Labels"%>checked = "checked"<%end%>>Labels</input>
+  <input type = "submit" value = "Change Mode">
+</form><br></br>
+
+
+
+<%if @mode == "Records"%>
+  <%@user.records.order(name: :asc).each do |r|%>
+  <a href = "/records/<%=r.slug%>"><%=r.name%></a><br>
+  <%end%>
+<%end%>
+
+<%if @mode == "Artists"%>
+
+  <p>COMING SOON</p>
+
+  <%end%>
+
+<%if @mode == "Labels"%>
+
+  <p>ALSO COMING SOON</p>
+  <%end%>

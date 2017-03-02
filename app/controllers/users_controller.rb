@@ -8,8 +8,16 @@ class UsersController < ApplicationController
       redirect '/login'
     else
     @user = User.find_by_slug(params[:slug])
+    @mode = "Records"
     erb :'users/index'
     end
+
+  end
+
+  post '/users/:slug' do
+    @mode = params[:mode]
+    @user = current_user
+    erb :'users/index'
   end
 
   get '/users/:slug/records' do

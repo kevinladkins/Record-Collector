@@ -31,8 +31,12 @@
 <table>
   <% if current_user.record_ids.include?(@record.id)%>
   <form action = "/records/<%=@record.slug%>/edit">
-    <input type = "submit" value = "Edit Song">
-  </form>
+    <input type = "submit" value = "Edit Record">
+  </form><br>
+  <form action = "/users/<%=current_user.slug%>/delete" method= "post">
+     <input type = "hidden" name = "record_id" value = "<%=@record.id%>">
+     <input type = "submit" value = "Delete Record">
+  </form><br>
   <%else%>
   <p>Add to your collection</p>
   <%end%>

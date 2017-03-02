@@ -29,3 +29,6 @@
     <td><%= @record.format %></td>
   </tr>
 <table>
+  <form action = "/records/<%=@record.slug%>/edit">
+    <input type = "submit" value = "Edit Song">
+  </form>

@@ -35,6 +35,7 @@ class RecordsController < ApplicationController
 
   post '/records/:slug/edit' do
     record = Record.update(params[:record])
+    binding.pry
     find_or_create(params, record)
     record.save
     redirect "/records/#{record.slug}"

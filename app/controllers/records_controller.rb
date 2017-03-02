@@ -9,9 +9,22 @@ class RecordsController < ApplicationController
 use Rack::Flash
 
   get '/records' do
+    if !logged_in?
+      redirect '/'
+    else
+    @mode = "Records"
     erb :'records/index'
+    end
   end
 
+  post '/records' do
+    if !logged_in?
+      redirect '/'
+    else
+      @mode = params[:mode]
+      erb :'records/index'
+    end
+  end
 
   get '/records/new' do
     erb :'records/new'

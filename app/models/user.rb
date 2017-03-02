@@ -7,5 +7,6 @@ class User < ActiveRecord::Base
   has_many :record_users
   has_many :records, through: :record_users
   has_many :artists, through: :records
+  has_many :labels, through: :records
 
 end

@@ -18,6 +18,7 @@ class RecordsController < ApplicationController
 
   post 'records/new' do
     record = Record.create(params)
+    current_user.records << record
     redirect "/records/#{record.slug}"
   end
 

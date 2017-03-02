@@ -1,4 +1,9 @@
 <h2>Your Collection</h2>
+  <% if flash.has?(:message)%>
+    <h3><%=flash[:message]%></h3>
+  <%end%>
+
+
 <form action = "/users/<%=@user.slug%>" method = "post">
   <label>Mode:
   <input type = "radio" name = "mode" value = "Records" <%if @mode == "Records"%>checked = "checked"<%end%> >Records</input>

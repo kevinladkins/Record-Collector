@@ -38,8 +38,8 @@
      <input type = "submit" value = "Delete Record">
   </form><br>
   <%else%>
-  <form action = "/users/<%=current_user.slug/new" method = "post">
-    <input type = "hidden" name = "record_id" value = <%=@record.id%>
+  <form action = "/users/<%=current_user.slug%>/new" method = "post">
+    <input type = "hidden" name = "record_id" value = <%=@record.id%>>
     <input type = "submit" value = "Add To My Collection">
   </form>
   <%end%>

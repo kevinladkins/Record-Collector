@@ -23,8 +23,21 @@ class RecordsController < ApplicationController
   end
 
   get '/records/:slug' do
-    @record = find_by_slug(params[:slug])
+    @record = Record.find_by_slug(params[:slug])
+    binding.pry
     erb :'records/show'
+  end
+
+  get '/records/:slug/edit' do
+    @record = Record.find_by_slug(params[:slug])
+    erb :'records/edit'
+  end
+
+  post '/records/:slug/edit' do
+    record = Record.update(params[:record])
+    find_or_create(params, record)
+    record.save
+    redirect "/records/#{record.slug}"
   end
 
   helpers do

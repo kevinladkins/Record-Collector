@@ -21,16 +21,21 @@
 
 <%if @mode == "Artists"%>
   <%@user.artists.order(name: :asc).each do |a|%>
-  <%=a.name%><br>
+  <h3><%=a.name%><br></h3>
   Records:<br>
-  <%records = @user.records.where("artist_id == #{a.id}").map {|r| r.name}%>
-  <%records.each do |r|%>
-    <%=r%>
+  <%@user.records.where("artist_id == #{a.id}").each do |r|%>
+    <a href = "/records/<%=r.slug%>"><%=r.name%></a></br>
     <%end%>
   <%end%>
 <%end%>
 
 <%if @mode == "Labels"%>
+  <%@user.labels.order(name: :asc).each do |l|%>
+    <h3><%=l.name%></h3><br>
+    Records:<br>
+    <%@user.records.where("label_id == #{l.id}").each do |r|%>
+      <a href = "/records/<%=r.slug%>"><%=r.name%></a> -- <%=r.artist.name%></br>
+      <%end%>
+  <%end%>
 
-  <p>ALSO COMING SOON</p>
   <%end%>

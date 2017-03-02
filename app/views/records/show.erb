@@ -1,4 +1,8 @@
+<% if flash.has?(:message)%>
+<h1><%=flash[:message]%></h1>
+<p>Click here to add to your collection<p>
 
+<%end%>
 
 <h2><%=@record.name%></h2>
 

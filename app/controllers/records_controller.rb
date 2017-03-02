@@ -2,9 +2,11 @@
 #require_relative './application_controller.rb'
 #require_relative '../models/record.rb'
 
+require 'rack-flash'
 
 class RecordsController < ApplicationController
 
+use Rack::Flash
 
   get '/records' do
     erb :'records/index'
@@ -18,7 +20,7 @@ class RecordsController < ApplicationController
   post '/records/new' do
     if Record.find_by(name: params[:record][:name], artist_id: params[:record][:artist_id])
        record = Record.find_by(name: params[:record][:name], artist_id: params[:record][:artist_id])
-       redirect "records/#{record.slug}/add_or_update"
+       flash[:message] = "Is this the record you're looking for?"
     else
       record = Record.create(params[:record])
       find_or_create(params, record)

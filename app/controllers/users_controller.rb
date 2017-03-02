@@ -37,6 +37,7 @@ class UsersController < ApplicationController
   post '/users/:slug/delete' do
     record = RecordUser.find_by(user_id: current_user.id, record_id: params[:record_id])
     record.destroy
+    redirect "/users/#{params[:slug]}"
   end
 
 

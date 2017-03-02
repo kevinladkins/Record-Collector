@@ -16,9 +16,15 @@ class RecordsController < ApplicationController
   end
 
   post '/records/new' do
-    record = Record.find_or_create_by(params[:record])
-    find_or_create(params, record)
-    record.save
+    if Record.find_by(name: params[:record][:name], artist_id: params[:record][:artist_id])
+       record = Record.find_by(name: params[:record][:name], artist_id: params[:record][:artist_id])
+       redirect "records/#{record.slug}/add_or_update"
+    else
+      record = Record.create(params[:record])
+      find_or_create(params, record)
+      record.save
+      current_user.records << record
+    end
     redirect "/records/#{record.slug}"
   end
 

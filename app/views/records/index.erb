@@ -4,7 +4,7 @@
   <%end%>
 
 
-<form action = "/users/<%=@user.slug%>" method = "post">
+<form action = "/records" method = "post">
   <label>Mode:
   <input type = "radio" name = "mode" value = "Records" <%if @mode == "Records"%>checked = "checked"<%end%> >Records</input>
   <input type = "radio" name = "mode" value = "Artists" <%if @mode == "Artists"%>checked = "checked"<%end%>>Artists</input>
@@ -18,7 +18,7 @@
 
 <%if @mode == "Records"%>
   <table>
-  <%@user.records.order(name: :asc).uniq.each do |r|%>
+  <%Record.all.order(name: :asc).each do |r|%>
     <tr>
       <td><a href = "/records/<%=r.slug%>"><%=r.name%></a></td>
       <td> <%=r.artist.name%><br></td>
@@ -29,11 +29,11 @@
 
 <%if @mode == "Artists"%>
   <table>
-    <%@user.artists.order(name: :asc).uniq.each do |a|%>
+    <%Artist.all.order(name: :asc).uniq.each do |a|%>
       <tr>
         <td><h3><%=a.name%></h3></td>
       </tr>
-    <%@user.records.where("artist_id == #{a.id}").each do |r|%>
+    <%Record.all.where("artist_id == #{a.id}").each do |r|%>
       <tr>
         <td><a href = "/records/<%=r.slug%>"><%=r.name%></a></td>
       </tr>
@@ -44,12 +44,12 @@
 
 <%if @mode == "Labels"%>
   <table>
-  <%@user.labels.order(name: :asc).uniq.each do |l|%>
+  <%Label.all.order(name: :asc).uniq.each do |l|%>
     <tr>
       <td><h3><%=l.name%></h3></td>
       <td></td>
     </tr>
-    <%@user.records.where("label_id == #{l.id}").each do |r|%>
+    <%Record.all.where("label_id == #{l.id}").each do |r|%>
       <tr>
         <td><a href = "/records/<%=r.slug%>"><%=r.name%>  </a></td>
         <td><%=r.artist.name%></br></td>

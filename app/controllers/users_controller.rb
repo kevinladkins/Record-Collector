@@ -15,7 +15,6 @@ class UsersController < ApplicationController
     @mode = "Records"
     erb :'users/index'
     end
-
   end
 
   post '/users/:slug' do

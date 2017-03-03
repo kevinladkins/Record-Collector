@@ -13,7 +13,7 @@ small, strike, strong, sub, sup, tt, var,
 b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
+/*table, */caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
@@ -45,10 +45,10 @@ q:before, q:after {
 	content: '';
 	content: none;
 }
-table {
+/*table {
 	border-collapse: collapse;
 	border-spacing: 0;
-}
+} */
 
 
 /*
@@ -134,7 +134,7 @@ Column layout
 
 * {
   font-family: Arial, sans-serif;
-  /*border: 3px dashed; */
+  /* border: 3px dashed; */
 }
 
 
@@ -142,14 +142,47 @@ a {
   text-decoration: none;
 }
 
+a:visited {
+  color: blue;
+}
+
+a:hover {
+  color: red;
+}
+
 #logo h1 {
+  padding: 20px, 20px, 15px, 20px;
   font-size: 3em;
   color: white;
 }
 
 #header {
   background-image: url(images/records_banner.jpg);
+  width: 100%;
+  padding-bottom: 5em;
 }
+
+#user a {
+  color: white;
+  float: right;
+}
+
+#user a:hover {
+  color: red;
+}
+
+#user {
+  padding-top: 2em;
+  padding-right: 1.5em;
+  font-size: 1.2em;
+}
+
+#logo {
+  padding-left: 1em;
+  padding-top: 1em;
+  float: left;
+}
+
 
 #footer {
   background-color: #d9d9d9;
@@ -162,10 +195,11 @@ a {
 .page_header {
   text-align: center;
   padding-bottom: 10px;
+  font-size 1.5 em
 }
 
 .page_header h1 {
-  font-size: 2em;
+  font-size: 3em;
   padding: 10px 5px;
 }
 
@@ -174,8 +208,28 @@ a {
 
 }
 
+.table {
+  margin: auto 0px;
+
+}
+
+table {
+  margin: 0px auto;
+  background-color: white;
+  font-size: 1.5 em
+}
+
+.form form {
+  padding: 2em;
+  width: 50%;
+  margin: 0px auto;
+  background-color: white;
+  font-size: 1.5 em
+}
+
 .table td {
   padding-left: 20px;
+  padding-right: 20px;
   padding-bottom: 5px;
   margin-bottom: 10px;
 }

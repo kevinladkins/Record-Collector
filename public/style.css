@@ -134,6 +134,7 @@ Column layout
 
 * {
   font-family: Arial, sans-serif;
+  background-color: #d9d9d9;
   /* border: 1px dashed; */
 }
 
@@ -165,12 +166,14 @@ a:hover {
   padding-right: 1.5em;
   font-size: 1.2em;
   float: right;
+  background: transparent;
 }
 
 
 #user a {
   padding: 10px, 10px, 10px, 0px;
   color: white;
+  background: transparent;
   /*float: right; */
 }
 
@@ -183,17 +186,20 @@ a:hover {
   padding-left: 1em;
   padding-top: 1em;
   float: left;
+  background: transparent;
 }
 
 #logo h1 {
   padding: 20px, 20px, 15px, 20px;
   font-size: 3em;
   color: white;
+  background: transparent;
 }
 
 #navigation {
   clear: left;
   margin-left: 1em;
+  background: transparent;
 }
 
 #navigation a {

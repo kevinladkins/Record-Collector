@@ -52,7 +52,7 @@ class ApplicationController < Sinatra::Base
     else
     user = User.create(params)
     session[:user_id] = user.id
-    redirect 'users/#{user.slug}'
+    redirect "users/#{user.slug}"
     end
   end
 

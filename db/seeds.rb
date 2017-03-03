@@ -1,37 +1,80 @@
 records_list = {
-    "Madison Square Guarden" => {
-      :artist => 1901
+    "It's Blitz" => {
+      :artist => Artist.find_by(name: "Yeah Yeah Yeahs"),
+      :format => "12\"",
+      :record_type => "LP",
+      :label => Label.find(2),
+      :rpm => "33rpm"
     },
-    "The big bull outside" => {
-      :year_completed => 1995
+    "Show Your Bones" => {
+      :artist => Artist.find_by(name: "Yeah Yeah Yeahs"),
+      :format => "12\"",
+      :record_type => "LP",
+      :label => Label.find(2),
+      :rpm => "33rpm"
     },
-    "Flatiron School" => {
-      :year_completed => 2014
+    "In The Flat Field" => {
+      :artist => Artist.find_by(name: "Bauhaus"),
+      :format => "12\"",
+      :record_type => "LP",
+      :label => Label.find(2),
+      :rpm => "33rpm"
     },
-    "Museum Mile" => {
-      :year_completed => 1058
+    "Mask" => {
+      :artist => Artist.find_by(name: "Bauhaus"),
+      :format => "12\"",
+      :record_type => "LP",
+      :label => Label.find(2),
+      :rpm => "33rpm"
     },
-    "Subway Station" => {
-      :year_completed => 2015
+    "The Sky's Gone Out" => {
+      :artist => Artist.find_by(name: "Bauhaus"),
+      :format => "12\"",
+      :record_type => "LP",
+      :label => Label.find(2),
+      :rpm => "33rpm"
     },
-    "Cast Iron" => {
-      :year_completed => 1951
+    "Sound of Silver" => {
+      :artist => Artist.find_by(name: "LCD Soundsystem"),
+      :format => "12\"",
+      :record_type => "LP",
+      :label => Label.find_by(name: "DFA"),
+      :rpm => "33rpm"
     },
-    "Shea Stadium" => {
-      :year_completed => 1964
+    "This is Happening" => {
+      :artist => Artist.find_by(name: "LCD Soundsystem"),
+      :format => "12\"",
+      :record_type => "LP",
+      :label => Label.find_by(name: "DFA"),
+      :rpm => "33rpm"
     },
-    "Flatiron Building" => {
-      :year_completed => 1902
+    "Extra Width" => {
+      :artist => Artist.find_by(name: "The Jon Spencer Blues Explosion"),
+      :format => "12\"",
+      :record_type => "LP",
+      :label => Label.find(2),
+      :rpm => "33rpm"
     },
-    "Brooklyn Bridge" => {
-      :year_completed => 1883
+    "Orange" => {
+      :artist => Artist.find_by(name: "The Jon Spencer Blues Explosion"),
+      :format => "12\"",
+      :record_type => "LP",
+      :label => Label.find(2),
+      :rpm => "33rpm"
+    },
+    "Now I Got Worry" => {
+      :artist => Artist.find_by(name: "The Jon Spencer Blues Explosion"),
+      :format => "12\"",
+      :record_type => "LP",
+      :label => Label.find(2),
+      :rpm => "33rpm"
     }
   }
 
-landmarks_list.each do |name, landmark_hash|
-  p = Landmark.new
+records_list.each do |name, record_hash|
+  p = Record.new
   p.name = name
-  landmark_hash.each do |attribute, value|
+  record_hash.each do |attribute, value|
       p[attribute] = value
   end
   p.save

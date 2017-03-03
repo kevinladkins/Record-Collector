@@ -10,8 +10,11 @@ class UsersController < ApplicationController
   get '/users/:slug' do
     if !logged_in?
       redirect '/'
+    elsif
+      current_user.slug != params[:slug]
+      redirect "/users/#{current_user.slug}"
     else
-    @user = User.find_by_slug(params[:slug])
+    @user = current_user
     @mode = "Records"
     erb :'users/index'
     end
@@ -20,6 +23,9 @@ class UsersController < ApplicationController
   post '/users/:slug' do
     if !logged_in?
       redirect '/'
+    elsif
+      current_user.slug != params[:slug]
+      redirect "/users/#{current_user.slug}"
     else
       @mode = params[:mode]
       @user = current_user
@@ -30,6 +36,9 @@ class UsersController < ApplicationController
   post '/users/:slug/new' do
     if !logged_in?
       redirect '/'
+    elsif
+      current_user.slug != params[:slug]
+      redirect "/users/#{current_user.slug}"
     else
       record = Record.find(params[:record_id])
       current_user.records << record
@@ -42,6 +51,9 @@ class UsersController < ApplicationController
   post '/users/:slug/delete' do
     if !logged_in?
       redirect '/'
+    elsif
+      current_user.slug != params[:slug]
+      redirect "/users/#{current_user.slug}"
     else
     record = RecordUser.find_by(user_id: current_user.id, record_id: params[:record_id])
     record.destroy

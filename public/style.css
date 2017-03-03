@@ -79,6 +79,20 @@ Clearfix -- use with floated elements; class="group"
   font-family: Arial, sans-serif;
 }
 
+
+a {
+  text-decoration: none;
+}
+
+#logo h1 {
+  font-size: 3em;
+  color: white;
+}
+
+#header {
+  background: url(images/records_banner.jpg);
+}
+
 .container {
   background-color: #d9d9d9;
 }
@@ -92,23 +106,7 @@ Clearfix -- use with floated elements; class="group"
 
 }
 
-.page_header table td {
+.table td {
   padding-left: 20px;
   padding-bottom: 5px;
-}
-
-#header {
-  background: url(images/records_banner.jpg);
-}
-
-
-a {
-  text-decoration: none;
-}
-
-
-
-#logo h1 {
-  font-size: 3em;
-  color: white;
 }

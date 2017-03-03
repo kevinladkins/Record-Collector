@@ -1,53 +1,55 @@
 <div class = "page_header">
 
-<% if flash.has?(:message)%>
-<h3><%=flash[:message]%></h1>
-<p>Click here to add to your collection<p>
+  <% if flash.has?(:message)%>
+  <h3><%=flash[:message]%></h1>
+  <p>Click here to add to your collection<p>
 
-<%end%>
-
-<h1><%=@record.name%></h1>
-
-<table>
-
-  <tr>
-    <td><strong>Artist: </strong></td>
-    <td><%= @record.artist.name %></td>
-  </tr>
-  <tr>
-    <td><strong>Released: </strong></td>
-    <td><%= @record.release_year %></td>
-  </tr>
-  <tr>
-    <td><strong>Label: </strong></td>
-    <td><%= @record.label.name %></td>
-  </tr>
-  <tr>
-    <td><strong>Type: </strong></td>
-    <td><%= @record.record_type %></td>
-  </tr>
-  <tr>
-    <td><strong>Format: </strong></td>
-    <td><%= @record.format %></td>
-  </tr>
-  <tr>
-    <td><strong>RPM: </strong></td>
-    <td><%= @record.rpm %></td>
-  </tr>
-<table>
-  <% if current_user.record_ids.include?(@record.id)%>
-  <form action = "/records/<%=@record.slug%>/edit">
-    <input type = "submit" value = "Edit Record">
-  </form><br>
-  <form action = "/users/<%=current_user.slug%>/delete" method= "post">
-     <input type = "hidden" name = "record_id" value = "<%=@record.id%>">
-     <input type = "submit" value = "Delete Record">
-  </form><br>
-  <%else%>
-  <form action = "/users/<%=current_user.slug%>/new" method = "post">
-    <input type = "hidden" name = "record_id" value = <%=@record.id%>>
-    <input type = "submit" value = "Add To My Collection">
-  </form>
   <%end%>
 
-</div><!--page header-->
+  <h1><%=@record.name%></h1>
+</div> <!-- page header -->
+
+<div class = "table">
+  <table>
+
+    <tr>
+      <td><strong>Artist: </strong></td>
+      <td><%= @record.artist.name %></td>
+    </tr>
+    <tr>
+      <td><strong>Released: </strong></td>
+      <td><%= @record.release_year %></td>
+    </tr>
+    <tr>
+      <td><strong>Label: </strong></td>
+      <td><%= @record.label.name %></td>
+    </tr>
+    <tr>
+      <td><strong>Type: </strong></td>
+      <td><%= @record.record_type %></td>
+    </tr>
+    <tr>
+      <td><strong>Format: </strong></td>
+      <td><%= @record.format %></td>
+    </tr>
+    <tr>
+      <td><strong>RPM: </strong></td>
+      <td><%= @record.rpm %></td>
+    </tr>
+  <table>
+    <% if current_user.record_ids.include?(@record.id)%>
+    <form action = "/records/<%=@record.slug%>/edit">
+      <input type = "submit" value = "Edit Record">
+    </form><br>
+    <form action = "/users/<%=current_user.slug%>/delete" method= "post">
+       <input type = "hidden" name = "record_id" value = "<%=@record.id%>">
+       <input type = "submit" value = "Delete Record">
+    </form><br>
+    <%else%>
+    <form action = "/users/<%=current_user.slug%>/new" method = "post">
+      <input type = "hidden" name = "record_id" value = <%=@record.id%>>
+      <input type = "submit" value = "Add To My Collection">
+    </form>
+    <%end%>
+
+</div><!--table-->

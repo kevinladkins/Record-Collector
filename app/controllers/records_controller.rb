@@ -72,8 +72,7 @@ use Rack::Flash
         record.artist_id = Artist.find_or_create_by(name: params[:artist][:name]).id
         current_user.save
         record.save
-      end
-      if params[:label][:name] != ""
+      elsif params[:label][:name] != ""
         record.label_id = Label.find_or_create_by(name: params[:label][:name]).id
         record.save
       end

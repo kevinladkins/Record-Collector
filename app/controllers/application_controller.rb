@@ -79,4 +79,13 @@ class ApplicationController < Sinatra::Base
     end
   end
 
+  def verify_user
+    if !logged_in?
+      redirect '/'
+    elsif
+      current_user.slug != params[:slug]
+      redirect "/users/#{current_user.slug}"
+    end
+  end
+
 end

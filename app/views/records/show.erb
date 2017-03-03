@@ -37,6 +37,9 @@
       <td><%= @record.rpm %></td>
     </tr>
   <table>
+  </div> <!-- table -->
+  <div class = "page_bottom">
+
     <% if current_user.record_ids.include?(@record.id)%>
     <form action = "/records/<%=@record.slug%>/edit">
       <input type = "submit" value = "Edit Record">
@@ -52,4 +55,4 @@
     </form>
     <%end%>
 
-</div><!--table-->
+</div><!--bottom-->

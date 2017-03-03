@@ -2,7 +2,11 @@
   font-family: Arial, sans-serif;
 }
 
-div#header{
+div.main {
+  text-align: center;
+}
+
+div#header {
   background-color: grey;
 }
 

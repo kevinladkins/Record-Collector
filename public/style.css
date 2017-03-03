@@ -2,6 +2,10 @@
   font-family: Arial, sans-serif;
 }
 
+div#header{
+  background-color: grey;
+}
+
 a {
   text-decoration: none;
 }

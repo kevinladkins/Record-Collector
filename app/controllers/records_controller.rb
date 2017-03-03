@@ -67,13 +67,14 @@ use Rack::Flash
     end
 
     def find_or_create(params, record)
-      if !params[:artist] == " "
+      if !params[:artist] == ""
+        binding.pry
         record.artist_id = Artist.find_or_create_by(name: params[:artist][:name]).id
         current_user.records << record
         current_user.save
         record.save
       end
-      if !params[:label] == " "
+      if !params[:label] == ""
         record.label_id = Label.find_or_create_by(name: params[:label][:name]).id
         record.save
       end

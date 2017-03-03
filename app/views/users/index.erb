@@ -1,6 +1,6 @@
 
-<div class = "main">
-<h2>Your Collection</h2>
+<div class = "page_header">
+<h1>Your Collection</h1>
   <% if flash.has?(:message)%>
     <h3><%=flash[:message]%></h3>
   <%end%>
@@ -17,7 +17,7 @@
   <input type = "submit" value = "Add New Record">
 </form></br>
 
-
+</div> <!-- closes "page header" div-->
 <%if @mode == "Records"%>
   <table>
   <%@user.records.order(name: :asc).uniq.each do |r|%>
@@ -61,4 +61,3 @@
 </table>
 
   <%end%>
-</div> <!-- closes "main" div-->

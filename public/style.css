@@ -79,21 +79,22 @@ Clearfix -- use with floated elements; class="group"
   font-family: Arial, sans-serif;
 }
 
-.main {
-  text-align: center;
+.container {
   background-color: #d9d9d9;
-  clear: both;
-
 }
 
-.main table {
+.page_header {
+  text-align: center;
+}
+
+.page_header table {
   text-align: left;
 
 }
 
-.main table td {
+.page_header table td {
   padding-left: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 5px;
 }
 
 #header {

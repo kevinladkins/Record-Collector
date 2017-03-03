@@ -18,10 +18,12 @@
   </form></br>
 </div><!--page header-->
 
-<div class = "table">
+<!-- <div class = "col-1-5"></div>
+<div class = "col-3-5"> -->
+<div class = "table" >
 
   <%if @mode == "Records"%>
-    <table>
+    <table align = "center">
     <%Record.all.order(name: :asc).each do |r|%>
       <tr>
         <td><a href = "/records/<%=r.slug%>"><%=r.name%></a></td>
@@ -55,12 +57,14 @@
       </tr>
       <%Record.all.where("label_id == #{l.id}").each do |r|%>
         <tr>
-          <td><a href = "/records/<%=r.slug%>"><%=r.name%>  </a></td>
-          <td><%=r.artist.name%></br></td>
+          <td><a href = "/records/<%=r.slug%>"><%=r.name%> </a></td>
+          <td><%=r.artist.name%></td>
         </tr>
         <%end%>
       <%end%>
     </table>
   <%end%>
-  
+
 </div> <!-- table -->
+<!--</div> <column -->
+<!-- <div class = "col-1-5"></div> -->

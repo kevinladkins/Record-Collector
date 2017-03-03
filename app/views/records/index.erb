@@ -23,7 +23,11 @@
 <div class = "table" >
 
   <%if @mode == "Records"%>
-    <table align = "center">
+   <table>
+    <tr>
+      <td><h3>Title</h3></td>
+      <td><h3>Artist</h3></td>
+    </tr>
     <%Record.all.order(name: :asc).each do |r|%>
       <tr>
         <td><a href = "/records/<%=r.slug%>"><%=r.name%></a></td>
@@ -36,10 +40,11 @@
   <%if @mode == "Artists"%>
     <table>
       <%Artist.all.order(name: :asc).uniq.each do |a|%>
+        <tr> <td></td> </tr>
         <tr>
           <td><h3><%=a.name%></h3></td>
         </tr>
-      <%Record.all.where("artist_id == #{a.id}").each do |r|%>
+      <%Record.all.where("artist_id == #{a.id}").order(name: :asc).each do |r|%>
         <tr>
           <td><a href = "/records/<%=r.slug%>"><%=r.name%></a></td>
         </tr>
@@ -51,11 +56,11 @@
   <%if @mode == "Labels"%>
     <table>
     <%Label.all.order(name: :asc).uniq.each do |l|%>
+      <tr> <td></td> </tr>
       <tr>
-        <td><h3><%=l.name%></h3></td>
-        <td></td>
+        <td colspan = "2"><h3><%=l.name%></h3></td>
       </tr>
-      <%Record.all.where("label_id == #{l.id}").each do |r|%>
+      <%Record.all.where("label_id == #{l.id}").order(name: :asc).each do |r|%>
         <tr>
           <td><a href = "/records/<%=r.slug%>"><%=r.name%> </a></td>
           <td><%=r.artist.name%></td>

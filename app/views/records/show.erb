@@ -1,17 +1,17 @@
-<div class = "page_header">
+<div class = "page_header" >
 
-  <% if flash.has?(:message)%>
-  <h3><%=flash[:message]%></h1>
 
-  <%end%>
 
-  <h1><%=@record.name%></h1>
 </div> <!-- page header -->
 
-<div class = "table">
-  <table>
 
-    <tr>
+<div class = "table message">
+  <h1><%=@record.name%></h1>
+  <% if flash.has?(:message)%>
+  <h3><%=flash[:message]%></h3></br>
+
+  <%end%>
+  <table>
       <td><strong>Artist: </strong></td>
       <td><%= @record.artist.name %></td>
     </tr>
@@ -37,6 +37,8 @@
     </tr>
   <table>
   </div> <!-- table -->
+  <p>w</p>
+
   <div class = "page_bottom">
 
     <% if current_user.record_ids.include?(@record.id)%>
@@ -54,4 +56,4 @@
     </form>
     <%end%>
 
-</div><!--bottom-->
+ </div><!--page bottom-->

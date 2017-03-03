@@ -1,9 +1,6 @@
 
-<div class = "page_header">
+<div class = "page_header message">
   <h1>Your Collection</h1>
-    <% if flash.has?(:message)%>
-      <h3><%=flash[:message]%></h3>
-    <%end%>
 
 
   <form action = "/users/<%=@user.slug%>" method = "post">
@@ -16,6 +13,9 @@
   <form action = "/records/new">
     <input type = "submit" value = "Add New Record">
   </form></br>
+  <% if flash.has?(:message)%>
+    <h3><%=flash[:message]%></h3>
+  <%end%>
 
 </div> <!-- closes "page header" div-->
 

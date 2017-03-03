@@ -5,6 +5,8 @@
 require 'rack-flash'
 
 class RecordsController < ApplicationController
+  enable :sessions
+  set :session_secret, "secret"
 
 use Rack::Flash
 

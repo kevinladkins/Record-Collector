@@ -7,7 +7,6 @@
   <body>
     <header>
       <div id = "header">
-        <style>{background-color: grey;}</style>
         <div id = "logo">
          <h1>Record Collector</h1>
         </div>
@@ -16,6 +15,10 @@
            <a href = "/users/<%=current_user.slug%>"><%=current_user.username%></a><br>
            <a href = "/logout">Log Out</a>
          <%end%>
+       </div>
+       <div id = "navigation">
+         <a href = "/records">RC Database</a>
+         <a href = "/">Your Collection</a>
        </div>
      </div>
      <div class = "container">

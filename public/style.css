@@ -74,7 +74,7 @@ Clearfix -- use with floated elements; class="group"
 
 
 /* ###############  GRID ################# */
-
+/*
 .container,
 .grid {
   margin: 0 auto;
@@ -134,7 +134,7 @@ Column layout
 
 * {
   font-family: Arial, sans-serif;
-  /* border: 3px dashed; */
+  /* border: 1px dashed; */
 }
 
 
@@ -150,37 +150,57 @@ a:hover {
   color: red;
 }
 
-#logo h1 {
-  padding: 20px, 20px, 15px, 20px;
-  font-size: 3em;
-  color: white;
-}
 
 #header {
   background-image: url(images/records_banner.jpg);
   width: 100%;
-  padding-bottom: 5em;
 }
 
-#user a {
-  color: white;
+/* #header a {
+  padding-top: 4em;
+} */
+
+#user {
+  padding-top: 1em;
+  padding-right: 1.5em;
+  font-size: 1.2em;
   float: right;
+}
+
+
+#user a {
+  padding: 10px, 10px, 10px, 0px;
+  color: white;
+  /*float: right; */
 }
 
 #user a:hover {
   color: red;
 }
 
-#user {
-  padding-top: 2em;
-  padding-right: 1.5em;
-  font-size: 1.2em;
-}
 
 #logo {
   padding-left: 1em;
   padding-top: 1em;
   float: left;
+}
+
+#logo h1 {
+  padding: 20px, 20px, 15px, 20px;
+  font-size: 3em;
+  color: white;
+}
+
+#navigation {
+  clear: left;
+  margin-left: 1em;
+}
+
+#navigation a {
+  display: inline-block;
+  padding: 1em;
+  color: white;
+  background-color: #ff1a1a;
 }
 
 

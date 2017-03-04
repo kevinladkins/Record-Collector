@@ -48,21 +48,21 @@ class UsersController < ApplicationController
   end
 
   get '/users/:slug' do
-    verify_user
+    validate_user
     @user = current_user
     @mode = "Records"
     erb :'users/index'
   end
 
   post '/users/:slug' do
-    verify_user
+    validate_user
     @mode = params[:mode]
     @user = current_user
     erb :'users/index'
   end
 
   post '/users/:slug/new' do
-    verify_user
+    validate_user
     record = Record.find(params[:record_id])
     current_user.records << record
     current_user.save
@@ -71,7 +71,7 @@ class UsersController < ApplicationController
   end
 
   post '/users/:slug/delete' do
-    verify_user
+    validate_user
     record = RecordUser.find_by(user_id: current_user.id, record_id: params[:record_id])
     record.destroy
     redirect "/users/#{params[:slug]}"

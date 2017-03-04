@@ -31,15 +31,20 @@ class ApplicationController < Sinatra::Base
     def current_user
       User.find(session[:user_id])
     end
-  end
 
-  def verify_user
-    if !logged_in?
-      redirect '/error'
-    elsif
-      current_user.slug != params[:slug]
-      redirect "/users/#{current_user.slug}"
+    def validate_user
+      verify_login
+      if current_user.slug != params[:slug]
+        redirect "/users/#{current_user.slug}"
+      end
     end
+
+    def verify_login
+      if !logged_in?
+        redirect '/error'
+      end
+    end
+
   end
 
 end

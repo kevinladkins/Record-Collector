@@ -11,29 +11,20 @@ class RecordsController < ApplicationController
 use Rack::Flash
 
   get '/records' do
-    if !logged_in?
-      redirect '/error'
-    else
+    verify_user
     @mode = "Records"
     erb :'records/index'
-    end
   end
 
   post '/records' do
-    if !logged_in?
-      redirect '/error'
-    else
-      @mode = params[:mode]
-      erb :'records/index'
-    end
+    verify_user
+    @mode = params[:mode]
+    erb :'records/index'
   end
 
   get '/records/new' do
-    if !logged_in?
-      redirect '/error'
-    else
+    verify_user
     erb :'records/new'
-   end
   end
 
   post '/records/new' do
@@ -50,20 +41,16 @@ use Rack::Flash
   end
 
   get '/records/:slug' do
-    if !logged_in?
-      redirect '/error'
-    else
+    verify_user
     @record = find_by_slug(params[:slug])
     erb :'records/show'
-    end
   end
 
   get '/records/:slug/edit' do
+    verify_user
     if !in_collection?(params[:slug])
       flash[:message] = "Record must be in your collection to edit"
       redirect "/records/#{params[:slug]}"
-    elsif !logged_in?
-        redirect '/error'
     else
     @record = find_by_slug(params[:slug])
     erb :'records/edit'

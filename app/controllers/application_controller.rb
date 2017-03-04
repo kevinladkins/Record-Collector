@@ -35,7 +35,7 @@ class ApplicationController < Sinatra::Base
 
   def verify_user
     if !logged_in?
-      redirect '/'
+      redirect '/error'
     elsif
       current_user.slug != params[:slug]
       redirect "/users/#{current_user.slug}"

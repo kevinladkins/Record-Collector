@@ -51,8 +51,13 @@ use Rack::Flash
   end
 
   get '/records/:slug/edit' do
+    if !in_collection?(params[:slug])
+      flash[:message] = "Record must be in your collection to edit"
+      redirect "/records/#{params[:slug]}"
+    else
     @record = find_by_slug(params[:slug])
     erb :'records/edit'
+    end
   end
 
   post '/records/:slug/edit' do
@@ -64,6 +69,11 @@ use Rack::Flash
   end
 
   helpers do
+
+    def in_collection?(slug)
+      current_user.records.include?(Record.find_by_slug(slug))
+    end
+
     def find_by_slug(slug)
       Record.find_by_slug(slug)
     end

@@ -46,7 +46,8 @@ class ApplicationController < Sinatra::Base
 
   post '/signup' do
     if params[:username] == "" || params[:password] == "" || params[:name] == "" || params[:email] == ""
-      redirect '/error'
+      flash[:message] = "Please complete all fields."
+      redirect '/signup'
     elsif User.find_by(username: params[:username], email: params[:email])
       redirect '/login'
     else

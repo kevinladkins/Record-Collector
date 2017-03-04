@@ -12,7 +12,7 @@ use Rack::Flash
 
   get '/records' do
     if !logged_in?
-      redirect '/'
+      redirect '/error'
     else
     @mode = "Records"
     erb :'records/index'

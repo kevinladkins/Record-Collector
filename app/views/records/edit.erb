@@ -15,7 +15,7 @@
     <input type = "text" name = "record[name]" value = "<%=@record.name%>"><br></br>
     <label>Artist: </label>
     <select name = "record[artist_id]">
-      <%Artist.all.each do |a|%>
+      <%Artist.all.order(name: :asc).each do |a|%>
         <%if a.id == @record.artist_id%>
         <option value = "<%=a.id%>" selected><%=a.name%></option>
         <%else%>
@@ -27,7 +27,7 @@
     <input type = "text" name = "artist[name]" placeholder = "artist name"><br></br>
     <label>Label: </label>
     <select name = "record[label_id]">
-      <%Label.all.each do |l|%>
+      <%Label.all.order(name: :asc).each do |l|%>
         <%if l.id == @record.label_id%>
         <option value = "<%=l.id%>" selected><%=l.name%></option>
         <%else%>

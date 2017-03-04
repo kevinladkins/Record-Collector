@@ -32,7 +32,8 @@ class ApplicationController < Sinatra::Base
       session[:user_id] = user.id
       redirect "/users/#{user.slug}"
     else
-      redirect '/error'
+      flash[:message] = "Incorrect username or password."
+      redirect '/login'
     end
   end
 

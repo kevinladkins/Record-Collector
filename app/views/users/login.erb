@@ -1,5 +1,8 @@
-<div class = "page_header">
+<div class = "page_header message">
   <h1>Log In</h1>
+  <% if flash.has?(:message)%>
+  <h3><%=flash[:message]%></h3></br>
+  <%end%>
 </div> <!-- page header -->
 
 <div class = "form">

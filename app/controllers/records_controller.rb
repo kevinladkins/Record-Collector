@@ -21,7 +21,7 @@ use Rack::Flash
 
   post '/records' do
     if !logged_in?
-      redirect '/'
+      redirect '/error'
     else
       @mode = params[:mode]
       erb :'records/index'
@@ -29,7 +29,11 @@ use Rack::Flash
   end
 
   get '/records/new' do
+    if !logged_in?
+      redirect '/error'
+    else
     erb :'records/new'
+   end
   end
 
   post '/records/new' do
@@ -46,14 +50,20 @@ use Rack::Flash
   end
 
   get '/records/:slug' do
+    if !logged_in?
+      redirect '/error'
+    else
     @record = find_by_slug(params[:slug])
     erb :'records/show'
+    end
   end
 
   get '/records/:slug/edit' do
     if !in_collection?(params[:slug])
       flash[:message] = "Record must be in your collection to edit"
       redirect "/records/#{params[:slug]}"
+    elsif !logged_in?
+        redirect '/error'
     else
     @record = find_by_slug(params[:slug])
     erb :'records/edit'

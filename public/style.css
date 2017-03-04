@@ -90,54 +90,19 @@ h1, h3, h4, h5, p {
   margin-bottom: 22px;
 }
 
-
 /*
 ========================================================
-Column layout
+App Styles
 ========================================================
 */
 
-.col-1-3 {
-  width: 33.33%;
-}
-
-.col-2-3 {
-  width: 66.66%;
-}
-
-.col-1-5 {
-  width: 20%;
-}
-
-.col-3-5 {
-  width: 60%;
-}
-
-.col-1-3,
-.col-2-3,
-.col-1-5,
-.col-3-5 {
-  display: inline-block;
-  vertical-align: top;
-}
-
-.grid,
-.col-1-3,
-.col-2-3
-.col-1-5,
-.col-3-5  {
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-/*********************PAGE STYLES ***************************************/
+/*//////////////GLOBAL STYLES///////////////////*/
 
 * {
   font-family: Arial, sans-serif;
   background-color: #d9d9d9;
   /* border: 1px dashed; */
 }
-
 
 a {
   text-decoration: none;
@@ -152,15 +117,16 @@ a:hover {
   color: red;
 }
 
+/*//////////////LAYOUT STYLES ///////////////////*/
+
+.container {
+ background-color: #d9d9d9;
+}
 
 #header {
   background-image: url(images/records_banner.jpg);
   width: 100%;
 }
-
-/* #header a {
-  padding-top: 4em;
-} */
 
 #user {
   padding-top: 1em;
@@ -170,18 +136,15 @@ a:hover {
   background: transparent;
 }
 
-
 #user a {
   padding: 10px, 10px, 10px, 0px;
   color: white;
   background: transparent;
-  /*float: right; */
 }
 
 #user a:hover {
   color: red;
 }
-
 
 #logo {
   padding-left: 1em;
@@ -210,18 +173,16 @@ a:hover {
   background-color: #ff1a1a;
 }
 
+#navigation a:hover {
+	color: red;
+}
+
 
 #footer {
   background-color: #d9d9d9;
 }
 
-#landing a, #error a {
-  background-color: #d9d9d9;
-}
-
-.container {
- background-color: #d9d9d9;
-}
+/*//////////////PAGE STYLES ///////////////////*/
 
 .page_header {
   text-align: center;
@@ -234,12 +195,6 @@ a:hover {
   padding: 10px 5px;
 }
 
-.message h3 {
-  text-align: center;
-  color: red;
-  background-color: white;
-}
-
 .page_header table {
   text-align: left;
 }
@@ -249,11 +204,17 @@ a:hover {
   padding-top: 10px;
 }
 
+#landing a, #error a {
+  background-color: #d9d9d9;
+}
 
+/*//////////////MESSAGE STYLES ///////////////////*/
 
-/* .table {
-  margin: auto 0px;
-} */
+.message h3 {
+  text-align: center;
+  color: red;
+  background-color: white;
+}
 
 .table h1 {
   text-align: center;
@@ -264,6 +225,16 @@ a:hover {
 
 
 
+.table td {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+.table h3 {
+  margin-bottom: 0;
+}
 
 table {
   margin: 0px auto;
@@ -279,7 +250,7 @@ table td strong {
   background-color: white;
 }
 
-
+/*//////////////FORM STYLES ///////////////////*/
 
 .form form {
   padding: 2em;
@@ -291,20 +262,4 @@ table td strong {
 
 .form form label {
   background-color: white;
-}
-
-/*.table {
-  display: inline-block;
-  margin: auto 0px;
-} */
-
-.table td {
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-bottom: 5px;
-  margin-bottom: 10px;
-}
-
-.table h3 {
-  margin-bottom: 0;
 }

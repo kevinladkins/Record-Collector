@@ -74,6 +74,7 @@ class UsersController < ApplicationController
     validate_user
     record = RecordUser.find_by(user_id: current_user.id, record_id: params[:record_id])
     record.destroy
+    flash[:message] = "#{Record.find(params[:record_id]).name} has been removed from your collection."
     redirect "/users/#{params[:slug]}"
   end
 

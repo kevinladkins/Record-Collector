@@ -11,7 +11,7 @@
     <input type = "text" name = "record[name]"><br></br>
     <label>Artist: </label>
     <select name = "record[artist_id]">
-      <%Artist.all.order(name: :asc).each do |a|%>
+      <%@artists.all.order(name: :asc).each do |a|%>
       <option value = "<%=a.id%>"><%=a.name%></option>
       <%end%>
     </select>
@@ -19,7 +19,7 @@
     <input type = "text" name = "artist[name]" placeholder = "artist name"><br></br>
     <label>Label: </label>
     <select name = "record[label_id]">
-      <%Label.all.order(name: :asc).each do |l|%>
+      <%@labels.all.order(name: :asc).each do |l|%>
       <option value = "<%=l.id%>"><%=l.name%></option>
       <%end%>
     </select>

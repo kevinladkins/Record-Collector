@@ -32,6 +32,8 @@ use Rack::Flash
 
   get '/records/new' do
     verify_login
+    @labels = @@labels
+    @artists = @@artists
     erb :'records/new'
   end
 
@@ -62,6 +64,8 @@ use Rack::Flash
       redirect "/records/#{params[:slug]}"
     else
     @record = find_by_slug(params[:slug])
+    @labels = @@labels
+    @artists = @@artists
     erb :'records/edit'
     end
   end

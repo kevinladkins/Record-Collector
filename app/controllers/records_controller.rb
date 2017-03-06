@@ -18,7 +18,6 @@ use Rack::Flash
     @records = @@records
     @labels = @@labels
     @artists = @@artists
-    binding.pry
     erb :'records/index'
   end
 

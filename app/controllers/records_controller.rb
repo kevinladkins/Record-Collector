@@ -53,7 +53,7 @@ use Rack::Flash
 
   get '/records/:slug' do
     verify_login
-    @record = find_by_slug(params[:slug])
+    @record = Record.find_by_slug(params[:slug])
     erb :'records/show'
   end
 

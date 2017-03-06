@@ -29,7 +29,7 @@
     <%@user.records.order(name: :asc).uniq.each do |r|%>
       <tr>
         <td><a href = "/records/<%=r.slug%>"><%=r.name%></a></td>
-        <td> <%=r.artist.name%><br></td>
+        <td> <%=r.artist.name%></td></br>
       </tr>
     <%end%>
    </table>

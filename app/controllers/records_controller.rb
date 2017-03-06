@@ -8,11 +8,19 @@ class RecordsController < ApplicationController
   enable :sessions
   set :session_secret, "secret"
 
+
+  @@artists, @@record_user, @@labels, @@records = Artist.all, RecordUser.all, Label.all, Record.all
+
+
 use Rack::Flash
 
   get '/records' do
     verify_login
     @mode = "Records"
+    @records = @@records
+    @labels = @@labels
+    @artists = @@artists
+    binding.pry
     erb :'records/index'
   end
 

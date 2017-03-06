@@ -28,7 +28,7 @@
       <td><h3>Title</h3></td>
       <td><h3>Artist</h3></td>
     </tr>
-    <%Record.all.order(name: :asc).each do |r|%>
+    <%@records.all.order(name: :asc).each do |r|%>
       <tr>
         <td><a href = "/records/<%=r.slug%>"><%=r.name%></a></td>
         <td> <%=r.artist.name%><br></td>
@@ -39,12 +39,12 @@
 
   <%if @mode == "Artists"%>
     <table>
-      <%Artist.all.order(name: :asc).uniq.each do |a|%>
+      <%@artists.all.order(name: :asc).uniq.each do |a|%>
         <tr> <td></td> </tr>
         <tr>
           <td><h3><%=a.name%></h3></td>
         </tr>
-      <%Record.all.where("artist_id == #{a.id}").order(name: :asc).each do |r|%>
+      <%@records.all.where("artist_id == #{a.id}").order(name: :asc).each do |r|%>
         <tr>
           <td><a href = "/records/<%=r.slug%>"><%=r.name%></a></td>
         </tr>
@@ -55,12 +55,12 @@
 
   <%if @mode == "Labels"%>
     <table>
-    <%Label.all.order(name: :asc).uniq.each do |l|%>
+    <%@labels.all.order(name: :asc).uniq.each do |l|%>
       <tr> <td></td> </tr>
       <tr>
         <td colspan = "2"><h3><%=l.name%></h3></td>
       </tr>
-      <%Record.all.where("label_id == #{l.id}").order(name: :asc).each do |r|%>
+      <%@records.all.where("label_id == #{l.id}").order(name: :asc).each do |r|%>
         <tr>
           <td><a href = "/records/<%=r.slug%>"><%=r.name%> </a></td>
           <td><%=r.artist.name%></td>

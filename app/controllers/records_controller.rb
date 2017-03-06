@@ -9,8 +9,6 @@ class RecordsController < ApplicationController
   set :session_secret, "secret"
 
 
-  @@artists, @@record_user, @@labels, @@records = Artist.all, RecordUser.all, Label.all, Record.all
-
 
 use Rack::Flash
 
@@ -26,6 +24,9 @@ use Rack::Flash
 
   post '/records' do
     verify_login
+    @records = @@records
+    @labels = @@labels
+    @artists = @@artists
     @mode = params[:mode]
     erb :'records/index'
   end

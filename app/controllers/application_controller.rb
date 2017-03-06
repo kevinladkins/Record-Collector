@@ -10,6 +10,8 @@ class ApplicationController < Sinatra::Base
     set :session_secret, "secret"
   end
 
+  @@artists, @@record_user, @@labels, @@records = Artist.all, RecordUser.all, Label.all, Record.all
+
   get '/' do
     if logged_in?
       redirect "/users/#{current_user.slug}"

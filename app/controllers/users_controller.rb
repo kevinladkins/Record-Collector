@@ -55,7 +55,6 @@ class UsersController < ApplicationController
   end
 
   post '/users/:slug' do
-    validate_user
     @mode = params[:mode]
     @user = current_user
     erb :'users/index'

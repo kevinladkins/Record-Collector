@@ -16,9 +16,7 @@
   <% if flash.has?(:message)%>
     <h3><%=flash[:message]%></h3>
   <%end%>
-
 </div> <!-- closes "page header" div-->
-
 <div class = "table">
   <%if @mode == "Records"%>
     <table>
@@ -29,7 +27,7 @@
     <%@user.records.order(name: :asc).uniq.each do |r|%>
       <tr>
         <td><a href = "/records/<%=r.slug%>"><%=r.name%></a></td>
-        <td> <%=r.artist.name%></td></br>
+        <td> <%=r.artist.name%><br></td>
       </tr>
     <%end%>
    </table>

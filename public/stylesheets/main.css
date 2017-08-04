@@ -1,0 +1,136 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", Arial, sans-serif;
+
+}
+
+#header {
+  /*background-image: url(records_banner_crop4.jpg);*/
+  width: 90%;
+  position: fixed;
+  top: 0;
+  left: 5%;
+  z-index: 1;
+  border-bottom: 1px solid rgb(229, 98, 206);
+  background-color: white;
+  height: 110px;
+}
+
+#user {
+  padding-top: 1em;
+  padding-right: 1.5em;
+  font-size: 1.2em;
+  float: right;
+  background: transparent;
+}
+
+#user a {
+  padding: 10px, 10px, 10px, 0px;
+  color: white;
+  background: transparent;
+}
+
+#user a:hover {
+  color: red;
+}
+
+#logo {
+  padding-left: 1em;
+  /*padding-top: 1em;*/
+  float: left;
+  background: transparent;
+}
+
+#logo h1 {
+  padding: 20px, 20px, 15px, 20px;
+  font-size: 4em;
+  color: #ff1a1a;
+  background: transparent;
+  font-weight: bold;
+}
+
+#navigation {
+  clear: left;
+  /*float: left;
+  margin-top: 3em;*/
+  padding-left: 3em;
+  background: transparent;
+}
+
+#navigation a {
+  display: inline-block;
+  padding: 0 5px 0 5px;
+  color: rgb(229, 98, 206);
+  text-decoration: none;
+  font-weight: 800;
+  /*background-color: */
+}
+
+#navigation a:hover {
+	color: #ff1a1a;
+}
+
+/********* HOME PAGE *********************/
+
+.container {
+  padding-top: 120px;
+  margin: 0 auto;
+  width: 80%;
+  position: relative;
+  height: 800px;
+}
+
+.container table {
+  /*margin: 0 auto;*/
+  position: relative;
+  width: 50%;
+  float: right;
+}
+
+.page_header {
+  font-size: 1.5em;
+  position: fixed;
+  float: left;
+  width: 30%;
+  padding-right: 10px;
+}
+
+.page_header h1 {
+  color: #ff1a1a;
+  font-weight: lighter;
+}
+
+.page-content {
+  position: relative;
+  width: 50%;
+  float: right;
+}
+
+table {
+  padding-left: 20px;
+  padding-top: 1em;
+  font-size: 1.2em;
+}
+
+table a {
+  text-decoration: none;
+  color: gray;
+}
+
+table a:hover {
+  color: #ff1a1a;
+}
+
+td h3 {
+  color: rgb(229, 98, 206);
+  font-size: 1.5em;
+}
+
+table td {
+  position: relative;
+}

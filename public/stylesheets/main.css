@@ -9,6 +9,8 @@ body {
 
 }
 
+/************************* SITE HEADER **************************/
+
 #header {
   /*background-image: url(records_banner_crop4.jpg);*/
   width: 90%;
@@ -22,17 +24,19 @@ body {
 }
 
 #user {
-  padding-top: 1em;
+  padding-top: 20px;
   padding-right: 1.5em;
   font-size: 1.2em;
   float: right;
   background: transparent;
+
 }
 
 #user a {
   padding: 10px, 10px, 10px, 0px;
-  color: white;
+  color: rgb(229, 98, 206);
   background: transparent;
+  text-decoration: none;
 }
 
 #user a:hover {
@@ -75,14 +79,14 @@ body {
 	color: #ff1a1a;
 }
 
-/********* HOME PAGE *********************/
+/************************* PAGE LAYOUT **************************/
 
 .container {
   padding-top: 120px;
   margin: 0 auto;
   width: 80%;
   position: relative;
-  height: 800px;
+  /*height: 800px;*/
 }
 
 
@@ -101,9 +105,14 @@ body {
 
 .page-content {
   position: relative;
-  width: 50%;
+  width: 70%;
+  padding-left: 40px;
   float: right;
+  overflow: scroll;
 }
+
+
+/************************* TABLE STYLES **************************/
 
 table {
   display: inline-block;
@@ -125,7 +134,82 @@ td h3 {
   color: rgb(229, 98, 206);
   font-size: 1.5em;
 }
-
-table td {
-  position: relative;
+td:nth-of-type(1) {
+  text-align: right;
+  padding-right: 20px;
 }
+
+td:nth-of-type(2) {
+  text-align: left;
+  padding-left: 20px;
+}
+
+
+/************************* FORM STYLES **************************/
+
+.form {
+  display: table;
+  /*margin: 0 auto;*/
+  color: rgb(229, 98, 206);
+  font-family: "Open Sans", Arial, sans-serif;
+  font-size: 1.2em;
+}
+
+.form div {
+  display: table-row;
+}
+
+.form label, form input {
+  display: table-cell;
+  margin-bottom: 10px;
+}
+
+#submit {
+  display: table-cell;
+  width: 100px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  color: #ff1a1a;
+  border: 1px solid rgb(229, 98, 206);
+  background-color: white;
+  border-radius: 5px;
+  font-size: .6em;
+  font-weight: bold;
+}
+
+.button {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  padding: 5px;
+  font-size: .6em;
+  color: #ff1a1a;
+  border: 1px solid rgb(229, 98, 206);
+  background-color: white;
+  border-radius: 5px;
+}
+
+.form label {
+  width: 200px;
+  padding-right: 5%;
+  text-align: right;
+  color: rgb(229, 98, 206);
+}
+
+.form input {
+  width: 300px;
+  font-family: "Open Sans", Arial, sans-serif;
+  padding: 5px;
+  border: none;
+}
+
+.form select {
+  font-family: "Open Sans", Arial, sans-serif;
+  color: #ff1a1a;
+  border: none;
+  padding: 5px;
+}
+
+
+
+
+/************************* FORM STYLES **************************/

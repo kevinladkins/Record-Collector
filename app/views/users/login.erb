@@ -1,17 +1,17 @@
-<div class = "page_header message">
+<div class="page_header message">
   <h1>Log In</h1>
   <% if flash.has?(:message)%>
   <h3><%=flash[:message]%></h3></br>
   <%end%>
 </div> <!-- page header -->
 
-<div class = "form">
-  <form action = '/login' method = 'post'>
+<div class="page-content">
+  <form action='/login' method='post'>
     <label>Username: </label>
-    <input type = "text" name = "username"><br></br>
+    <input type="text" name="username"><br></br>
     <label>Password: </label>
-    <input type = "password" name = "password"><br></br>
-    <input type = "submit" value = "Log In">
+    <input type="password" name="password"><br></br>
+    <input type="submit" value="Log In">
   </form>
 
 </div><!-- form-->

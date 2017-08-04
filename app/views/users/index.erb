@@ -1,11 +1,11 @@
 
-<div class = "page_header message">
+<div class="page_header message">
   <h1>Your Collection</h1>
 
 
-  <form action = "/users/<%=@user.slug%>" method = "post">
+  <form action ="/users/<%=@user.slug%>" method="post">
     <label>Mode:
-    <input type = "radio" name = "mode" value = "Records" <%if @mode == "Records"%>checked = "checked"<%end%> >Records</input>
+    <input type="radio" name="mode" value="Records" <%if @mode == "Records"%>checked = "checked"<%end%> >Records</input>
     <input type = "radio" name = "mode" value = "Artists" <%if @mode == "Artists"%>checked = "checked"<%end%>>Artists</input>
     <input type = "radio" name = "mode" value = "Labels" <%if @mode == "Labels"%>checked = "checked"<%end%>>Labels</input>
     <input type = "submit" value = "Change Mode">

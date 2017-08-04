@@ -3,21 +3,21 @@
   <h1>Your Collection</h1>
 
 
-  <form action ="/users/<%=@user.slug%>" method="post">
+  <form action="/users/<%=@user.slug%>" method="post">
     <label class="display-mode-label">Order By:</label><br>
-    <input type="radio" name="mode" value="Records" <%if @mode == "Records"%>checked = "checked"<%end%> >Title</input>
-    <input type = "radio" name = "mode" value = "Artists" <%if @mode == "Artists"%>checked = "checked"<%end%>>Artist</input>
-    <input type = "radio" name = "mode" value = "Labels" <%if @mode == "Labels"%>checked = "checked"<%end%>>Label</input>
-    <input type = "submit" value = "Change Mode" class="button">
+    <input type="radio" name="mode" value="Records" <%if @mode == "Records"%>checked="checked"<%end%> >Title</input>
+    <input type="radio" name="mode" value="Artists" <%if @mode == "Artists"%>checked="checked"<%end%>>Artist</input>
+    <input type="radio" name="mode" value="Labels" <%if @mode == "Labels"%>checked="checked"<%end%>>Label</input>
+    <input type="submit" value="Change Mode" class="button">
   </form><br></br>
-  <form action = "/records/new">
-    <input type = "submit" value = "Add New Record" class="button">
+  <form action="/records/new">
+    <input type="submit" value="Add New Record" class="button">
   </form></br>
   <% if flash.has?(:message)%>
     <h3><%=flash[:message]%></h3>
   <%end%>
 </div> <!-- closes "page header" div-->
-<div class = "page-content">
+<div class="page-content">
   <%if @mode == "Records"%>
     <table>
     <tr>
@@ -26,7 +26,7 @@
     </tr>
     <%@user.records.order(name: :asc).uniq.each do |r|%>
       <tr>
-        <td><a href = "/records/<%=r.slug%>"><%=r.name%></a></td>
+        <td><a href="/records/<%=r.slug%>"><%=r.name%></a></td>
         <td> <%=r.artist.name%><br></td>
       </tr>
     <%end%>
@@ -42,7 +42,7 @@
         </tr>
       <%@user.records.where("artist_id == #{a.id}").order(name: :asc).each do |r|%>
         <tr>
-          <td><a href = "/records/<%=r.slug%>"><%=r.name%></a></td>
+          <td><a href="/records/<%=r.slug%>"><%=r.name%></a></td>
         </tr>
         <%end%>
     <%end%>
@@ -54,11 +54,12 @@
     <%@user.labels.order(name: :asc).uniq.each do |l|%>
       <tr> <td></td> </tr>
       <tr>
-        <td colspan = "2"><h3><%=l.name%></h3></td>
+        <td colspan="2" class="label-header"><h3><%=l.name%></h3></td>
       </tr>
+      <tr> <td></td> </tr>
       <%@user.records.where("label_id == #{l.id}").order(name: :asc).each do |r|%>
         <tr>
-          <td><a href = "/records/<%=r.slug%>"><%=r.name%>  </a></td>
+          <td><a href="/records/<%=r.slug%>"><%=r.name%>  </a></td>
           <td><%=r.artist.name%></br></td>
         </tr>
         <%end%>

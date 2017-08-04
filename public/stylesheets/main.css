@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: gray;
 }
 
 body {
@@ -81,6 +80,12 @@ body {
 	color: #ff1a1a;
 }
 
+/***********************ELEMENT STYLES****************************/
+
+.display-mode-label {
+  color: rgb(229, 98, 206);
+}
+
 /************************* PAGE LAYOUT **************************/
 
 .container {
@@ -138,6 +143,7 @@ td h3 {
   color: rgb(229, 98, 206);
   font-size: 1.5em;
 }
+
 td:nth-of-type(1) {
   text-align: right;
   padding-right: 20px;
@@ -147,6 +153,11 @@ td:nth-of-type(2) {
   text-align: left;
   padding-left: 20px;
 }
+
+td.label-header {
+  text-align: center;
+}
+
 
 /********************* SHOW PAGE TABLE STYLES *******************/
 

@@ -1,4 +1,4 @@
-<div class = "page-header">
+<div class="page-header">
 
   <h1>Record Database</h1>
     <% if flash.has?(:message)%>
@@ -6,21 +6,21 @@
     <%end%>
 
 
-  <form action = "/records" method = "post">
+  <form action="/records" method="post">
     <label class="display-mode-label">Order By:</label><br>
-    <input type="radio" name="mode" value="Records" <%if @mode == "Records"%>checked = "checked"<%end%> >Title</input>
-    <input type = "radio" name = "mode" value = "Artists" <%if @mode == "Artists"%>checked = "checked"<%end%>>Artist</input>
-    <input type = "radio" name = "mode" value = "Labels" <%if @mode == "Labels"%>checked = "checked"<%end%>>Label</input>
-    <input type = "submit" value = "Change Mode">
+    <input type="radio" name="mode" value="Records" <%if @mode == "Records"%>checked="checked"<%end%> >Title</input>
+    <input type="radio" name="mode" value="Artists" <%if @mode == "Artists"%>checked="checked"<%end%>>Artist</input>
+    <input type="radio" name="mode" value="Labels" <%if @mode == "Labels"%>checked="checked"<%end%>>Label</input>
+    <input type="submit" value="Change Mode" class="button">
   </form><br></br>
   <form action = "/records/new">
-    <input type = "submit" value = "Add New Record">
+    <input type="submit" value="Add New Record" class="button">
   </form></br>
 </div><!--page header-->
 
 
 
-<div class = "page-content" >
+<div class="page-content" >
 
   <%if @mode == "Records"%>
    <table>
@@ -30,7 +30,7 @@
     </tr>
     <%@records.all.order(name: :asc).each do |r|%>
       <tr>
-        <td><a href = "/records/<%=r.slug%>"><%=r.name%></a></td>
+        <td><a href="/records/<%=r.slug%>"><%=r.name%></a></td>
         <td> <%=r.artist.name%><br></td>
       </tr>
     <%end%>
@@ -46,7 +46,7 @@
         </tr>
       <%@records.all.where("artist_id == #{a.id}").order(name: :asc).each do |r|%>
         <tr>
-          <td><a href = "/records/<%=r.slug%>"><%=r.name%></a></td>
+          <td><a href="/records/<%=r.slug%>"><%=r.name%></a></td>
         </tr>
         <%end%>
       <%end%>
@@ -58,13 +58,15 @@
     <%@labels.all.order(name: :asc).uniq.each do |l|%>
       <tr> <td></td> </tr>
       <tr>
-        <td colspan = "2"><h3><%=l.name%></h3></td>
+        <td colspan="2" class="label-header"><h3><%=l.name%></h3></td>
+        <!-- <td></td> -->
       </tr>
       <%@records.all.where("label_id == #{l.id}").order(name: :asc).each do |r|%>
         <tr>
-          <td><a href = "/records/<%=r.slug%>"><%=r.name%> </a></td>
+          <td><a href="/records/<%=r.slug%>"><%=r.name%> </a></td>
           <td><%=r.artist.name%></td>
         </tr>
+        <tr> <td></td> </tr>
         <%end%>
       <%end%>
     </table>

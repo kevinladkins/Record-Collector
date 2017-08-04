@@ -2,25 +2,26 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: gray;
 }
 
 body {
   font-family: "Open Sans", Arial, sans-serif;
-
+  background-color: white;
 }
 
 /************************* SITE HEADER **************************/
 
 #header {
   /*background-image: url(records_banner_crop4.jpg);*/
+  background-color: white;
   width: 90%;
   position: fixed;
-  top: 0;
+  padding-top: 20px;
   left: 5%;
   z-index: 1;
   border-bottom: 1px solid rgb(229, 98, 206);
-  background-color: white;
-  height: 110px;
+  height: 120px;
 }
 
 #user {
@@ -51,11 +52,12 @@ body {
 }
 
 #logo h1 {
-  padding: 20px, 20px, 15px, 20px;
+  padding: 40px, 20px, 15px, 20px;
   font-size: 4em;
   color: #ff1a1a;
   background: transparent;
-  font-weight: bold;
+  font-weight: lighter;
+  font-family: "Julius Sans One", Arial, sans-serif;
 }
 
 #navigation {
@@ -91,6 +93,7 @@ body {
 
 
 .page-header {
+  padding-top: 2em;
   font-size: 1.5em;
   position: fixed;
   float: left;
@@ -104,6 +107,7 @@ body {
 }
 
 .page-content {
+  padding-top: 2em;
   position: relative;
   width: 70%;
   padding-left: 40px;
@@ -112,12 +116,12 @@ body {
 }
 
 
-/************************* TABLE STYLES **************************/
+/************************* MAIN TABLE STYLES **************************/
 
 table {
   display: inline-block;
   padding-left: 20px;
-  padding-top: 1em;
+  padding-top: 1.5em;
   font-size: 1.2em;
 }
 
@@ -144,6 +148,42 @@ td:nth-of-type(2) {
   padding-left: 20px;
 }
 
+/********************* SHOW PAGE TABLE STYLES *******************/
+
+
+.record-table {
+  padding-left: 20px;
+  padding-top: 1em;
+  font-size: 1.5em;
+}
+
+.record-table a {
+  text-decoration: none;
+  color: gray;
+}
+
+.record-table a:hover {
+  color: #ff1a1a;
+}
+
+.record-table td:nth-of-type(1) {
+  color: rgb(229, 98, 206);
+  text-align: right;
+  padding-right: 20px;
+}
+
+.record-table td:nth-of-type(2) {
+  text-align: left;
+  padding-left: 20px;
+}
+
+.page-bottom {
+  padding-left: 40px;
+}
+
+.page-bottom .button {
+  display: inline-block;
+}
 
 /************************* FORM STYLES **************************/
 
@@ -208,8 +248,3 @@ td:nth-of-type(2) {
   border: none;
   padding: 5px;
 }
-
-
-
-
-/************************* FORM STYLES **************************/

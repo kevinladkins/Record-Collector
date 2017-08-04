@@ -1,17 +1,16 @@
-<div class = "page-header" >
+<div class="page-header" >
 
-
-
+  <div class="table message">
+    <h1><%=@record.name%></h1>
+    <% if flash.has?(:message)%>
+    <h3><%=flash[:message]%></h3></br>
+   <%end%>
+  </div>
 </div> <!-- page header -->
 
-
-<div class = "table message">
-  <h1><%=@record.name%></h1>
-  <% if flash.has?(:message)%>
-  <h3><%=flash[:message]%></h3></br>
-
-  <%end%>
-  <table>
+<div class="page-content">
+  <table class="record-table">
+    <tr>
       <td><strong>Artist: </strong></td>
       <td><%= @record.artist.name %></td>
     </tr>
@@ -35,25 +34,25 @@
       <td><strong>RPM: </strong></td>
       <td><%= @record.rpm %></td>
     </tr>
-  <table>
-  </div> <!-- table -->
-  <p>w</p>
+  <table> <!-- table -->
+
 
   <div class = "page_bottom">
 
     <% if current_user.record_ids.include?(@record.id)%>
-    <form action = "/records/<%=@record.slug%>/edit">
-      <input type = "submit" value = "Edit Record">
+    <form action="/records/<%=@record.slug%>/edit">
+      <input type="submit" value="Edit Record" class="button">
     </form><br>
-    <form action = "/users/<%=current_user.slug%>/delete" method= "post">
-       <input type = "hidden" name = "record_id" value = "<%=@record.id%>">
-       <input type = "submit" value = "Delete Record">
+    <form action="/users/<%=current_user.slug%>/delete" method="post">
+       <input type="hidden" name="record_id" value="<%=@record.id%>">
+       <input type="submit" value="Delete Record" class="button">
     </form><br>
     <%else%>
-    <form action = "/users/<%=current_user.slug%>/new" method = "post">
-      <input type = "hidden" name = "record_id" value = <%=@record.id%>>
-      <input type = "submit" value = "Add To My Collection">
+    <form action="/users/<%=current_user.slug%>/new" method="post">
+      <input type="hidden" name="record_id" value=<%=@record.id%>>
+      <input type="submit" value="Add To My Collection" class="button">
     </form>
     <%end%>
 
- </div><!--page bottom-->
+  </div><!--page bottom-->
+</div><!--page-content-->

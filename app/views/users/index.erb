@@ -4,14 +4,14 @@
 
 
   <form action ="/users/<%=@user.slug%>" method="post">
-    <label>Mode:
-    <input type="radio" name="mode" value="Records" <%if @mode == "Records"%>checked = "checked"<%end%> >Records</input>
-    <input type = "radio" name = "mode" value = "Artists" <%if @mode == "Artists"%>checked = "checked"<%end%>>Artists</input>
-    <input type = "radio" name = "mode" value = "Labels" <%if @mode == "Labels"%>checked = "checked"<%end%>>Labels</input>
-    <input type = "submit" value = "Change Mode">
+    <label class="display-mode-label">Order By:</label><br>
+    <input type="radio" name="mode" value="Records" <%if @mode == "Records"%>checked = "checked"<%end%> >Title</input>
+    <input type = "radio" name = "mode" value = "Artists" <%if @mode == "Artists"%>checked = "checked"<%end%>>Artist</input>
+    <input type = "radio" name = "mode" value = "Labels" <%if @mode == "Labels"%>checked = "checked"<%end%>>Label</input>
+    <input type = "submit" value = "Change Mode" class="button">
   </form><br></br>
   <form action = "/records/new">
-    <input type = "submit" value = "Add New Record">
+    <input type = "submit" value = "Add New Record" class="button">
   </form></br>
   <% if flash.has?(:message)%>
     <h3><%=flash[:message]%></h3>

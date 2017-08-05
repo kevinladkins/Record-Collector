@@ -8,8 +8,8 @@
 
   <form action="/records/new" method="post" class="form">
     <div>
-      <label>Name: </label>
-      <input type="text" name="record[name]">
+      <label>Title: </label>
+      <input type="text" name="record[name]" placeholder="title">
     </div>
     <div>
       <label>Artist: </label>
@@ -37,7 +37,7 @@
     </div>
     <div>
       <label>Release Year: </label>
-      <input type="text" name="record[release_year]">
+      <input type="text" name="record[release_year]" placeholder="release year">
     </div>
     <div>
       <label>Format: </label>
@@ -67,8 +67,13 @@
       </select>
     </div>
     <div>
+      <label>Cover Image: </label>
+      <label for="file-upload">click to select file</label>
+      <input type="file" id="file-upload" name="pic" accept="image/*" class="submit">
+    </div>
+    <div>
       <label></label>
-      <input type="submit" value="Add Record" id="submit" class="button">
+      <input type="submit" value="Add Record" id="submit">
     </div>
   </form>
 

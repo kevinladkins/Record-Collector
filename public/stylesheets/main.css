@@ -264,9 +264,9 @@ td:nth-of-type(2) {
   display: table-row;
 }
 
-.form label, form input {
+.form label, .form input, .form select {
   display: table-cell;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 #submit {
@@ -309,4 +309,26 @@ td:nth-of-type(2) {
 
 input[type=text]:focus {
     border: 3px solid rgb(229, 98, 206);
+}
+
+
+input[type="file"] {
+    display: none;
+}
+
+label[for="file-upload"] {
+  display: table-cell;
+  width: 100px;
+  padding-left: 5px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  color: grey;
+  opacity: 0.8;
+  /*border: 1px solid rgb(229, 98, 206);
+  background-color: white;
+  border-radius: 5px;
+  font-size: .6em;*/
+  font-weight: bold;
+  cursor: pointer;
+  text-align: left;
 }

@@ -3,16 +3,16 @@
   <h1>Your Collection</h1>
 
 
-  <form action="/users/<%=@user.slug%>" method="post">
-    <span class="display-mode">Order By:</span><br>
-    <input type="radio" name="mode" value="Records" id="title-button" class="mode-selector"<%if @mode == "Records"%>checked="checked"<%end%>></input>
-    <label for="title-button" class="display-mode-label">Title</label>
-    <input type="radio" name="mode" value="Artists" id="artist-button" class="mode-selector"<%if @mode == "Artists"%>checked="checked"<%end%>></input>
-    <label for="artist-button" class="display-mode-label">Artist</label>
-    <input type="radio" name="mode" value="Labels" id="label-button" class="mode-selector" <%if @mode == "Labels"%>checked="checked"<%end%>></input>
-    <label for="label-button" class="display-mode-label">Label</label>
-  </form>
-  
+
+  <span class="display-mode">Order By:</span><br>
+  <input type="radio" name="mode" value="Records" id="title-button" class="mode-selector" checked="checked"></input>
+  <label for="title-button" class="display-mode-label">Title</label>
+  <input type="radio" name="mode" value="Artists" id="artist-button" class="mode-selector"</input>
+  <label for="artist-button" class="display-mode-label">Artist</label>
+  <input type="radio" name="mode" value="Labels" id="label-button" class="mode-selector"</input>
+  <label for="label-button" class="display-mode-label">Label</label>
+
+
   <form action="/records/new">
     <input type="submit" value="Add New Record" class="button">
   </form></br>
@@ -20,6 +20,7 @@
     <h3><%=flash[:message]%></h3>
   <%end%>
 </div> <!-- closes "page header" div-->
+
 <div class="page-content">
 
   <table id="title-table">
@@ -50,12 +51,12 @@
  </table>
 
   <table id="label-table" class="disabled">
-  <%@user.labels.order(name: :asc).uniq.each do |l|%>
-    <tr> <td></td> </tr>
-    <tr>
-      <td colspan="2" class="label-header"><h3><%=l.name%></h3></td>
-    </tr>
-    <tr> <td></td> </tr>
+    <%@user.labels.order(name: :asc).uniq.each do |l|%>
+      <tr> <td></td> </tr>
+      <tr>
+        <td colspan="2" class="label-header"><h3><%=l.name%></h3></td>
+      </tr>
+      <tr> <td></td> </tr>
     <%@user.records.where("label_id == #{l.id}").order(name: :asc).each do |r|%>
       <tr>
         <td><a href="/records/<%=r.slug%>"><%=r.name%>  </a></td>

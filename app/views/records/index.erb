@@ -6,24 +6,26 @@
     <%end%>
 
 
-  <form action="/records" method="post">
-    <label class="display-mode-label">Order By:</label><br>
-    <input type="radio" name="mode" value="Records" <%if @mode == "Records"%>checked="checked"<%end%> >Title</input>
-    <input type="radio" name="mode" value="Artists" <%if @mode == "Artists"%>checked="checked"<%end%>>Artist</input>
-    <input type="radio" name="mode" value="Labels" <%if @mode == "Labels"%>checked="checked"<%end%>>Label</input>
-    <input type="submit" value="Change Mode" class="button">
-  </form><br></br>
+
+    <span class="display-mode">Order By:</span><br>
+    <input type="radio" name="mode" value="Records" id="title-button" class="mode-selector" checked="checked"></input>
+    <label for="title-button" class="display-mode-label">Title</label>
+    <input type="radio" name="mode" value="Artists" id="artist-button" class="mode-selector"</input>
+    <label for="artist-button" class="display-mode-label">Artist</label>
+    <input type="radio" name="mode" value="Labels" id="label-button" class="mode-selector"</input>
+    <label for="label-button" class="display-mode-label">Label</label>
+
   <form action = "/records/new">
     <input type="submit" value="Add New Record" class="button">
   </form></br>
+
 </div><!--page header-->
 
 
 
 <div class="page-content" >
 
-  <%if @mode == "Records"%>
-   <table>
+   <table id="title-table">
     <tr>
       <td><h3>Title</h3></td>
       <td><h3>Artist</h3></td>
@@ -35,10 +37,9 @@
       </tr>
     <%end%>
    </table>
-  <%end%>
 
-  <%if @mode == "Artists"%>
-    <table>
+
+    <table class="disabled" id="artist-table">
       <%@artists.all.order(name: :asc).uniq.each do |a|%>
         <tr> <td></td> </tr>
         <tr>
@@ -51,10 +52,8 @@
         <%end%>
       <%end%>
     </table>
-  <%end%>
 
-  <%if @mode == "Labels"%>
-    <table>
+    <table class="disabled" id="label-table">
     <%@labels.all.order(name: :asc).uniq.each do |l|%>
       <tr> <td></td> </tr>
       <tr>
@@ -70,7 +69,6 @@
         <%end%>
       <%end%>
     </table>
-  <%end%>
 
 </div> <!-- table -->
 <!--</div> <column -->

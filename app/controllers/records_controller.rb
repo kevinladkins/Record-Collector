@@ -14,21 +14,12 @@ use Rack::Flash
 
   get '/records' do
     verify_login
-    @mode = "Records"
     @records = @@records
     @labels = @@labels
     @artists = @@artists
     erb :'records/index'
   end
 
-  post '/records' do
-    verify_login
-    @records = @@records
-    @labels = @@labels
-    @artists = @@artists
-    @mode = params[:mode]
-    erb :'records/index'
-  end
 
   get '/records/new' do
     verify_login

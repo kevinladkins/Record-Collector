@@ -50,15 +50,9 @@ class UsersController < ApplicationController
   get '/users/:slug' do
     validate_user
     @user = current_user
-    @mode = "Records"
     erb :'users/index'
   end
 
-  post '/users/:slug' do
-    @mode = params[:mode]
-    @user = current_user
-    erb :'users/index'
-  end
 
   post '/users/:slug/new' do
     validate_user

@@ -82,7 +82,7 @@ body {
 
 /***********************ELEMENT STYLES****************************/
 
-.display-mode-label {
+.display-mode {
   color: rgb(229, 98, 206);
 }
 
@@ -109,6 +109,7 @@ body {
 .page-header h1 {
   color: #ff1a1a;
   font-weight: lighter;
+  margin-bottom: 1em;
 }
 
 .page-content {
@@ -117,14 +118,33 @@ body {
   width: 70%;
   padding-left: 40px;
   float: right;
-  overflow: scroll;
+  /*overflow: scroll;*/
+  height: 1000px;
 }
 
 
 /************************* MAIN TABLE STYLES **************************/
 
-table {
+.disabled  {
+  display: none;
+}
+
+.display-mode-label  {
   display: inline-block;
+  margin-right: 1em;
+}
+
+.mode-selector {
+  position: absolute;
+  left: -200px;
+}
+
+.mode-selector:checked + label {
+  color: red;
+}
+
+
+table {
   padding-left: 20px;
   padding-top: 1.5em;
   font-size: 1.2em;
@@ -154,9 +174,11 @@ td:nth-of-type(2) {
   padding-left: 20px;
 }
 
-td.label-header {
-  text-align: center;
-}
+
+
+/*td.label-header {
+  text-align: left;
+}*/
 
 
 /********************* SHOW PAGE TABLE STYLES *******************/

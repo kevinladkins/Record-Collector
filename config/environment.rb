@@ -8,5 +8,10 @@ ActiveRecord::Base.establish_connection(
   :database => "db/#{ENV['SINATRA_ENV']}.sqlite"
 )
 
+#Sets envrionment constant pointing to absolute path of app
+APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
+
+require 'dotenv'
+Dotenv.load
 require_all 'app'
 require 'pry'

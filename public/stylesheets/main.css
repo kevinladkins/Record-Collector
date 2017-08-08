@@ -246,7 +246,7 @@ td:nth-of-type(2) {
   padding-left: 40px;
 }
 
-.page-bottom .button {
+.page-bottom form {
   display: inline-block;
 }
 

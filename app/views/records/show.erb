@@ -38,18 +38,24 @@
       <td><strong>RPM: </strong></td>
       <td><%= @record.rpm %></td>
     </tr>
+    <% if current_user.record_ids.include?(@record.id)%>
+    <tr>
+      <td><button class="button" id="edit-record-button"><a href="/records/<%=@record.slug%>/edit">
+        Edit Record</a></button></td>
+      <td> <button class="button" id="remove-record-button" data-user="<%=current_user.slug%>" data-record-id="<%=@record.id%>">Remove From Collection</button></td>
+    </tr>
+    <% end %>
   <table> <!-- table -->
 
 
   <div class = "page_bottom">
 
     <% if current_user.record_ids.include?(@record.id)%>
-    <form action="/records/<%=@record.slug%>/edit">
-      <input type="submit" value="Edit Record" class="button">
-    </form><br>
+
+
     <form action="/users/<%=current_user.slug%>/delete" method="post">
        <input type="hidden" name="record_id" value="<%=@record.id%>">
-       <input type="submit" value="Delete Record" class="button">
+
     </form><br>
     <%else%>
     <form action="/users/<%=current_user.slug%>/new" method="post">
@@ -60,3 +66,24 @@
 
   </div><!--page bottom-->
 </div><!--page-content-->
+
+<script>
+
+  var removeButton = document.getElementById('remove-record-button');
+  var userSlug = removeButton.getAttribute('data-user');
+  var recordId = removeButton.getAttribute('data-record-id');
+  removeButton.addEventListener("click", function() {
+    deleteUser()
+  });
+
+
+  function deleteUser() {
+    var url = `/users/${userSlug}/delete`;
+    var request = new XMLHttpRequest();
+    var postData = `record_id=${recordId}`;
+    request.open('POST', url, true)
+    request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    request.send(postData);
+    window.location = `/users/${userSlug}`;
+  }
+</script>

@@ -13,6 +13,9 @@ gem 'shotgun'
 gem 'pry'
 gem 'bcrypt'
 gem "tux"
+gem 'dotenv'
+gem 'aws-sdk'
+
 
 group :test do
   gem 'rspec'

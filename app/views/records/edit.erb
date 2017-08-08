@@ -5,16 +5,16 @@
   <h3><%=flash[:message]%></h3></br>
 
   <%end%>
-  
+
   <div class="record-cover-large">
-    <img src="/images/english_tapas.jpg">
+    <img src="<%=@record.cover%>">
   </div>
 
 </div> <!-- page header -->
 
 <div class="page-content">
 
-  <form action="/records/<%=@record.slug%>/edit" method="post" class="form">
+  <form action="/records/<%=@record.slug%>/edit" method="post" class="form" enctype="multipart/form-data">
     <div>
       <label>Title: </label>
       <input type="text" name="record[name]" value="<%=@record.name%>" placeholder="title">
@@ -88,7 +88,7 @@
     <div>
       <label>Cover Image: </label>
       <label for="file-upload">click to select file</label>
-      <input type="file" id="file-upload" name="pic" accept="image/*" class="submit">
+      <input type="file" id="file-upload" name="record[cover_upload]" accept="image/*" class="submit">
     </div>
     <div>
       <label></label>

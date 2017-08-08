@@ -1,5 +1,3 @@
-#require_relative './application_controller.rb'
-#require_relative './records_controller.rb'
 
 require 'rack-flash'
 

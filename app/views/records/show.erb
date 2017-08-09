@@ -52,51 +52,13 @@
       </td>
     </tr>
     <% end %>
-  <table> <!-- table -->
-
-
-  <!-- <div class = "page_bottom">
-
-    <% if current_user.record_ids.include?(@record.id)%>
-
-
-    <form action="/users/<%=current_user.slug%>/delete" method="post">
-       <input type="hidden" name="record_id" value="<%=@record.id%>">
-
-    </form><br>
-    <%else%>
-    <form action="/users/<%=current_user.slug%>/new" method="post">
-      <input type="hidden" name="record_id" value=<%=@record.id%>>
-      <input type="submit" value="Add To My Collection" class="button" id="add-button">
-    </form>
-    <%end%> -->
+  </table>
 
   </div><!--page bottom-->
 </div><!--page-content-->
 
 <script>
-  //remove record functions
-
-  // var removeButton = document.getElementById('remove-record-button');
-  // var userSlug = removeButton.getAttribute('data-user');
-  // var recordId = removeButton.getAttribute('data-record-id');
-  // removeButton.addEventListener("click", function() {
-  //   removeRecord()
-  // });
-  //
-  //
-  // function removeRecord() {
-  //   var url = `/users/${userSlug}/delete`;
-  //   var request = new XMLHttpRequest();
-  //   var postData = `record_id=${recordId}`;
-  //   request.open('POST', url, true)
-  //   request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  //   request.send(postData);
-  //   window.location = `/users/${userSlug}`;
-  // }
-
-  //add record functions
-
+  
   var addOrRemoveButton = document.getElementById('add-or-remove-button');
   var userSlug = addOrRemoveButton.getAttribute('data-user');
   var recordId = addOrRemoveButton.getAttribute('data-record-id');

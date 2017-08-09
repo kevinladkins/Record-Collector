@@ -44,7 +44,6 @@ body {
 
 #logo {
   padding-left: 1em;
-  /*padding-top: 1em;*/
   float: left;
   background: transparent;
 }
@@ -60,8 +59,6 @@ body {
 
 #navigation {
   clear: left;
-  /*float: left;
-  margin-top: 3em;*/
   padding-left: 3em;
   background: transparent;
 }
@@ -72,7 +69,6 @@ body {
   color: rgb(229, 98, 206);
   text-decoration: none;
   font-weight: 800;
-  /*background-color: */
 }
 
 #navigation a:hover {
@@ -98,7 +94,6 @@ body {
   margin: 0 auto;
   width: 80%;
   position: relative;
-  /*height: 800px;*/
 }
 
 
@@ -197,9 +192,6 @@ td:nth-of-type(2) {
 
 }
 
-
-
-
 /********************* SHOW PAGE TABLE STYLES *******************/
 
 
@@ -246,7 +238,6 @@ button#edit-record-button a {
 
 .form {
   display: table;
-  /*margin: 0 auto;*/
   color: rgb(229, 98, 206);
   font-family: "Open Sans", Arial, sans-serif;
   font-size: 1.2em;
@@ -286,7 +277,6 @@ button#edit-record-button a {
   width: 300px;
   font-family: "Open Sans", Arial, sans-serif;
   padding: 5px;
-  /*background-color: rgba(229, 98, 206, 0.1);*/
   border: none;
   font-size: 1em;
   color: #ff1a1a;
@@ -317,10 +307,6 @@ label[for="file-upload"] {
   margin-top: 10px;
   color: grey;
   opacity: 0.8;
-  /*border: 1px solid rgb(229, 98, 206);
-  background-color: white;
-  border-radius: 5px;
-  font-size: .6em;*/
   font-weight: bold;
   cursor: pointer;
   text-align: left;

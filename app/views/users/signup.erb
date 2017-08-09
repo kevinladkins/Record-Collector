@@ -9,15 +9,26 @@
 </div><!--page header-->
 
 <div class="page-content">
-  <form action='/signup' method='post'>
-    <label>Name: </label>
-    <input type="text" name="name"><br></br>
-    <label>Username: </label>
-    <input type="text" name="username"><br></br>
-    <label>Email: </label>
-    <input type="text" name= "email"><br></br>
-    <label>Password: </label>
-    <input type = "password" name = "password"><br></br>
-    <input type = "submit" value = "Sign Up">
+  <form action="/signup" method="post" class="form">
+    <div>
+      <label>Name: </label>
+      <input type="text" name="name" placeholder="name">
+    </div>
+    <div>
+      <label>Username: </label>
+      <input type="text" name="username" placeholder="username">
+    </div>
+    <div>
+      <label>Email: </label>
+      <input type="text" name="email" placeholder="email">
+    </div>
+    <div>
+      <label>Password: </label>
+      <input type="password" name="password" placeholder="password">
+    </div>
+    <div>
+      <label></label>
+      <input type="submit" value="Sign Up" id="file-upload" >
+    </div>
   </form>
-</div> <!-- closes "form"  -->
+</div>

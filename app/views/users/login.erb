@@ -6,12 +6,19 @@
 </div> <!-- page header -->
 
 <div class="page-content">
-  <form action='/login' method='post'>
-    <label>Username: </label>
-    <input type="text" name="username"><br></br>
-    <label>Password: </label>
-    <input type="password" name="password"><br></br>
-    <input type="submit" value="Log In">
+  <form action="/login" method="post" class="form">
+    <div>
+      <label>Username: </label>
+      <input type="text" name="username" placeholder="username">
+    </div>
+    <div>
+      <label>Password: </label>
+      <input type="password" name="password" placeholder="password">
+    </div>
+    <div>
+      <label></label>
+      <input type="submit" value="Log In" id="file-upload" class="button">
+    </div>
   </form>
 
 </div><!-- form-->

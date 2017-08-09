@@ -2,6 +2,8 @@
 <html>
   <head>
     <title>Index</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href = "/stylesheets/main.css" type = "text/css" rel = "stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One|Open+Sans:300|Raleway:500" rel="stylesheet">
   </head>
@@ -18,8 +20,13 @@
          <%end%>
        </div>
        <div id = "navigation">
-         <a href = "/records">RC Database</a>
-         <a href = "/">Your Collection</a>
+         <%if logged_in?%>
+           <a href = "/">Your Collection</a>
+           <a href = "/records">RC Database</a>
+         <%else%>
+           <a href="/login">Log In</a>
+           <a href="/signup">Sign Up</a>
+         <%end%>
        </div>
      </div>
      <div class = "container">

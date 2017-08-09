@@ -12,7 +12,6 @@ body {
 /************************* SITE HEADER **************************/
 
 #header {
-  /*background-image: url(records_banner_crop4.jpg);*/
   background-color: white;
   width: 90%;
   position: fixed;
@@ -168,7 +167,6 @@ body {
 /************************* MAIN TABLE STYLES **************************/
 
 
-
 table {
   padding-left: 20px;
   padding-top: 1.5em;
@@ -189,15 +187,6 @@ td h3 {
   font-size: 1.5em;
 }
 
-/*#title-table td:nth-of-type(1) {
-  text-align: right;
-  padding-right: 20px;
-}
-
-#title-table td:nth-of-type(2) {
-  text-align: left;
-  padding-left: 20px;
-}*/
 
 td:nth-of-type(2) {
   padding-left: 20px;
@@ -208,9 +197,7 @@ td:nth-of-type(2) {
 
 }
 
-/*td.label-header {
-  text-align: left;
-}*/
+
 
 
 /********************* SHOW PAGE TABLE STYLES *******************/
@@ -248,6 +235,11 @@ td:nth-of-type(2) {
 
 .page-bottom form {
   display: inline-block;
+}
+
+button#edit-record-button a {
+  color: #ff1a1a;
+  cursor: default;
 }
 
 /************************* FORM STYLES **************************/

@@ -42,13 +42,20 @@
     <tr>
       <td><button class="button" id="edit-record-button"><a href="/records/<%=@record.slug%>/edit">
         Edit Record</a></button></td>
-      <td> <button class="button" id="remove-record-button" data-user="<%=current_user.slug%>" data-record-id="<%=@record.id%>">Remove From Collection</button></td>
+      <td> <button class="button" id="add-or-remove-button" data-resource="delete" data-user="<%=current_user.slug%>" data-record-id="<%=@record.id%>">Remove From Collection</button></td>
+    </tr>
+    <%else%>
+    <tr >
+      <td></td>
+      <td>
+        <input type="submit" value="Add To Collection" class="button" id="add-or-remove-button" data-resource="new" data-user="<%=current_user.slug%>" data-record-id="<%=@record.id%>">
+      </td>
     </tr>
     <% end %>
   <table> <!-- table -->
 
 
-  <div class = "page_bottom">
+  <!-- <div class = "page_bottom">
 
     <% if current_user.record_ids.include?(@record.id)%>
 
@@ -60,25 +67,47 @@
     <%else%>
     <form action="/users/<%=current_user.slug%>/new" method="post">
       <input type="hidden" name="record_id" value=<%=@record.id%>>
-      <input type="submit" value="Add To My Collection" class="button">
+      <input type="submit" value="Add To My Collection" class="button" id="add-button">
     </form>
-    <%end%>
+    <%end%> -->
 
   </div><!--page bottom-->
 </div><!--page-content-->
 
 <script>
+  //remove record functions
 
-  var removeButton = document.getElementById('remove-record-button');
-  var userSlug = removeButton.getAttribute('data-user');
-  var recordId = removeButton.getAttribute('data-record-id');
-  removeButton.addEventListener("click", function() {
-    deleteUser()
+  // var removeButton = document.getElementById('remove-record-button');
+  // var userSlug = removeButton.getAttribute('data-user');
+  // var recordId = removeButton.getAttribute('data-record-id');
+  // removeButton.addEventListener("click", function() {
+  //   removeRecord()
+  // });
+  //
+  //
+  // function removeRecord() {
+  //   var url = `/users/${userSlug}/delete`;
+  //   var request = new XMLHttpRequest();
+  //   var postData = `record_id=${recordId}`;
+  //   request.open('POST', url, true)
+  //   request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  //   request.send(postData);
+  //   window.location = `/users/${userSlug}`;
+  // }
+
+  //add record functions
+
+  var addOrRemoveButton = document.getElementById('add-or-remove-button');
+  var userSlug = addOrRemoveButton.getAttribute('data-user');
+  var recordId = addOrRemoveButton.getAttribute('data-record-id');
+  var resource = addOrRemoveButton.getAttribute('data-resource');
+
+  addOrRemoveButton.addEventListener("click", function() {
+    addOrRemoveRecord()
   });
 
-
-  function deleteUser() {
-    var url = `/users/${userSlug}/delete`;
+  function addOrRemoveRecord() {
+    var url = `/users/${userSlug}/${resource}`;
     var request = new XMLHttpRequest();
     var postData = `record_id=${recordId}`;
     request.open('POST', url, true)

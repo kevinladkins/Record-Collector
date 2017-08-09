@@ -112,6 +112,15 @@ body {
   margin-bottom: 1em;
 }
 
+.page-content h1 {
+  color: rgb(229, 98, 206);
+  font-weight: lighter;
+  font-size: 2em;
+  margin-bottom: 1em;
+  margin-top: 1em;
+  text-align: center;
+}
+
 .page-content {
   padding-top: 2em;
   position: relative;
@@ -132,6 +141,17 @@ body {
   width: 100%;
   height: auto;
   display: inline-block;
+}
+
+/************************ LANDING PAGE ********************************/
+
+#landing-head a {
+  text-decoration: none;
+  color: rgb(229, 98, 206);
+}
+
+#landing-head a:hover {
+  color: #ff1a1a;
 }
 
 /************************ INDEX DISPLAY OPTIONS ***********************/

@@ -19,8 +19,8 @@ class UsersController < ApplicationController
       session[:user_id] = user.id
       redirect "/users/#{user.slug}"
     else
-      flash[:message] = "Incorrect username or password."
-      redirect '/login'
+      flash.now[:message] = "<h1 style='color: red;'>Incorrect username or password.</h1>"
+      erb :index
     end
   end
 
@@ -34,10 +34,11 @@ class UsersController < ApplicationController
 
   post '/signup' do
     if params[:username] == "" || params[:password] == "" || params[:name] == "" || params[:email] == ""
-      flash[:message] = "Please complete all fields."
-      redirect '/signup'
+      flash[:message] = "<h1 style='color: red;'>Please complete all fields.</h1>"
+      erb :index
     elsif User.find_by(username: params[:username], email: params[:email])
-      redirect '/login'
+      flash[:message] = "<h1 style='color: red;'>User account found. Please log in.</h1>"
+      erb :index
     else
     user = User.create(params)
     session[:user_id] = user.id

@@ -1,6 +1,74 @@
-<div class = "page_header" id = "landing"><!--page header-->
+<div class="page-header" id="landing">
 
    <h1>Welcome!</h1>
 
-   <h2>Please <a href = '/login'>Log In </a>or <a href = '/signup'>Sign Up</a></h2>
-</div><!--page header-->
+   <h2 id="landing-head">Please <a href="#" onclick="showLogin(event)">Log In </a> or<br/> <a href="#" onclick="showSignup(event)">Sign Up</a></h2>
+
+</div>
+
+<div class="page-content">
+  <div id="signup" class="disabled">
+    <h1>Sign Up</h1>
+    <form action="/signup" method="post" class="form">
+      <div>
+        <label>Name: </label>
+        <input type="text" name="name" placeholder="name">
+      </div>
+      <div>
+        <label>Username: </label>
+        <input type="text" name="username" placeholder="username">
+      </div>
+      <div>
+        <label>Email: </label>
+        <input type="text" name="email" placeholder="email">
+      </div>
+      <div>
+        <label>Password: </label>
+        <input type="password" name="password" placeholder="password">
+      </div>
+      <div>
+        <label></label>
+        <input type="submit" value="Sign Up" id="file-upload" >
+      </div>
+    </form>
+  </div><!--close signup div -->
+  <div id="login" class="disabled">
+    <h1>Log In</h1>
+    <form action="/login" method="post" class="form">
+      <div>
+        <label>Username: </label>
+        <input type="text" name="username" placeholder="username">
+      </div>
+      <div>
+        <label>Password: </label>
+        <input type="password" name="password" placeholder="password">
+      </div>
+      <div>
+        <label></label>
+        <input type="submit" value="Log In" id="file-upload" class="button">
+      </div>
+    </form>
+  </div><!-- close login div-->
+  <% if flash.has?(:message)%>
+    <h3><%=flash[:message]%></h3></br>
+  <%end%>
+</div><!--close page content div -->
+
+<script>
+
+  var login = document.getElementById("login");
+  var signup = document.getElementById("signup");
+
+  function showLogin(e) {
+    e.preventDefault;
+    signup.className = 'disabled'
+    login.className = '';
+  }
+
+  function showSignup(e) {
+    e.preventDefault;
+    login.className = 'disabled'
+    signup.className = ''
+  }
+
+</script>

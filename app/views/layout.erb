@@ -4,35 +4,35 @@
     <title>Index</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href = "/stylesheets/main.css" type = "text/css" rel = "stylesheet">
+    <link href="/stylesheets/main.css" type="text/css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One|Open+Sans:300|Raleway:500" rel="stylesheet">
   </head>
   <body>
     <header>
-      <div id = "header">
-        <div id = "logo">
+      <div id="header">
+        <div id="logo">
          <h1>Record Collector</h1>
         </div>
-       <div id = "user">
+       <div id="user">
          <%if logged_in?%>
-           <a href = "/users/<%=current_user.slug%>"><%=current_user.username%></a><br>
-           <a href = "/logout">Log Out</a>
+           <a href="/users/<%=current_user.slug%>"><%=current_user.username%></a><br>
+           <a href="/logout">Log Out</a>
          <%end%>
        </div>
        <div id = "navigation">
          <%if logged_in?%>
-           <a href = "/">Your Collection</a>
-           <a href = "/records">RC Database</a>
+           <a href="/">Your Collection</a>
+           <a href="/records">RC Database</a>
          <%else%>
-           <a href="/login">Log In</a>
-           <a href="/signup">Sign Up</a>
+           <a href="#" onclick="showLogin(event)">Log In</a>
+           <a href="#" onclick="showSignup(event)">Sign Up</a>
          <%end%>
        </div>
      </div>
-     <div class = "container">
+     <div class="container">
          <%=yield%>
      </div>
-     <footer id = "footer">
+     <footer id="footer">
      </footer>
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
      <script>

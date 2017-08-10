@@ -21,7 +21,6 @@
     margin-top: 0;
   }
 
-
   .page-header.index-container {
     margin: 0 auto;
     padding-top: 1em;
@@ -116,7 +115,6 @@
     padding-left: 0;
   }
 
-
   #user {
     padding: 0 5px 0 5px;
     margin-right: 10%;
@@ -128,7 +126,6 @@
   }
 
   #display-options {
-    /*padding-top: .7em;*/
     clear: both;
     float: left;
   }

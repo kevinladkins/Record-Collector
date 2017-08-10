@@ -1,4 +1,4 @@
-<div class="page-header message">
+<div class="page-header edit-container message">
 
   <h1>Edit Record</h1>
     <% if flash.has?(:message)%>
@@ -12,7 +12,7 @@
 
 </div> <!-- page header -->
 
-<div class="page-content">
+<div class="page-content edit-container">
 
   <form action="/records/<%=@record.slug%>/edit" method="post" class="form" enctype="multipart/form-data">
     <div>

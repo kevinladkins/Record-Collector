@@ -22,7 +22,8 @@ class ApplicationController < Sinatra::Base
 
 
   get '/error' do
-    erb :error
+    flash.now[:message] = "<h1 style='color: red;'>You must be logged in to do that.</h1>"
+    erb :index
   end
 
   helpers do

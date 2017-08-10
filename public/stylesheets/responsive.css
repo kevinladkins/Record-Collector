@@ -1,0 +1,136 @@
+@media only screen and (max-width: 768px) and (min-width: 414px) {
+
+  .container {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .desktop-break {
+    display: none;
+  }
+
+  form.add-record-form {
+    display: inline-block;
+    float: right;
+    padding-right: 20%;
+    margin-top: 0;
+  }
+
+  .add-record-form .button {
+    margin-top: 0;
+  }
+
+
+  .page-header.index-container {
+    margin: 0 auto;
+    padding-top: 1em;
+    width: 100%;
+    float: none;
+    background-color: white;
+    z-index: 1;
+  }
+
+  .page-content.index-container {
+    width: 100%;
+    float: none;
+    margin: 100px auto 0;
+    padding-left: 0;
+  }
+
+  .page-header.index-container h1 {
+    font-size: 1.7em;
+    margin: 0;
+    font-weight: bold;
+    float: left;
+  }
+
+  .page-header.index-container h2 {
+    float: left;
+    font-size: 1.7em;
+    padding-left: 1em;
+  }
+
+  .page-header.edit-container {
+    float: none;
+    width: 100%;
+    position :static;
+    text-align: center;
+  }
+
+  .page-header.edit-container h1 {
+    margin-bottom: 0;
+  }
+
+  .page-header.edit-container .record-cover-large {
+    display: none
+  }
+
+  .page-content.edit-container {
+    width: 100%;
+    float: none;
+    padding-left: 0;
+    margin: 0 auto;
+  }
+
+  .page-content {
+    width: 70%;
+  }
+
+  .page-content table {
+    width: 100%;
+  }
+
+  .page-content form select {
+    width: 300px;
+  }
+
+  .page-content form {
+    margin: 0 auto;
+  }
+
+  .page-content form input[type="submit"] {
+    width: auto;
+  }
+
+  .record-table {
+    width: 80%;
+  }
+
+  .display-mode {
+    margin-right: 1em;
+  }
+
+  #title-table, #label-table {
+    margin: 0 auto;
+  }
+
+  #artist-table {
+    margin: 0 0 0 15%;
+  }
+
+  #title-table td, #artist-table td, #label-table td {
+    text-align: left;
+    width: 40%;
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+
+  #user {
+    padding: 0 5px 0 5px;
+    margin-right: 10%;
+  }
+
+  #header {
+    width: 100%;
+    left: 0;
+  }
+
+  #display-options {
+    /*padding-top: .7em;*/
+    clear: both;
+    float: left;
+  }
+
+}

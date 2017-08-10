@@ -1,19 +1,19 @@
 
-<div class="page-header message">
+<div class="page-header index-container message">
   <h1>Your Collection</h1>
 
 
+  <div id="display-options">
+    <span class="display-mode">Order By:</span><br class="desktop-break">
+    <input type="radio" name="mode" value="Records" id="title-button" class="mode-selector" checked="checked"></input>
+    <label for="title-button" class="display-mode-label">Title</label>
+    <input type="radio" name="mode" value="Artists" id="artist-button" class="mode-selector"</input>
+    <label for="artist-button" class="display-mode-label">Artist</label>
+    <input type="radio" name="mode" value="Labels" id="label-button" class="mode-selector"</input>
+    <label for="label-button" class="display-mode-label">Label</label>
+ </div>
 
-  <span class="display-mode">Order By:</span><br>
-  <input type="radio" name="mode" value="Records" id="title-button" class="mode-selector" checked="checked"></input>
-  <label for="title-button" class="display-mode-label">Title</label>
-  <input type="radio" name="mode" value="Artists" id="artist-button" class="mode-selector"</input>
-  <label for="artist-button" class="display-mode-label">Artist</label>
-  <input type="radio" name="mode" value="Labels" id="label-button" class="mode-selector"</input>
-  <label for="label-button" class="display-mode-label">Label</label>
-
-
-  <form action="/records/new">
+  <form action="/records/new" class="add-record-form">
     <input type="submit" value="Add New Record" class="button">
   </form></br>
   <% if flash.has?(:message)%>
@@ -21,7 +21,7 @@
   <%end%>
 </div> <!-- closes "page header" div-->
 
-<div class="page-content">
+<div class="page-content index-container">
 
   <table id="title-table">
     <tr>

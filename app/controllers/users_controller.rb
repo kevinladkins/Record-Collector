@@ -34,10 +34,10 @@ class UsersController < ApplicationController
 
   post '/signup' do
     if params[:username] == "" || params[:password] == "" || params[:name] == "" || params[:email] == ""
-      flash[:message] = "<h1 style='color: red;'>Please complete all fields.</h1>"
+      flash.now[:message] = "<h1 style='color: red;'>Please complete all fields.</h1>"
       erb :index
     elsif User.find_by(username: params[:username], email: params[:email])
-      flash[:message] = "<h1 style='color: red;'>User account found. Please log in.</h1>"
+      flash.now[:message] = "<h1 style='color: red;'>User account found. Please log in.</h1>"
       erb :index
     else
     user = User.create(params)
@@ -58,8 +58,6 @@ class UsersController < ApplicationController
     record = Record.find(params[:record_id])
     current_user.records << record
     current_user.save
-    flash[:message] = "#{record.name} has been added to your collection."
-    redirect "/users/#{current_user.slug}"
   end
 
   post '/users/:slug/delete' do

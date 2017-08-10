@@ -1,10 +1,6 @@
-<div class="page-header" >
+<div class="page-header show-container" >
 
-  <div class="table message">
     <h1><%=@record.name%></h1>
-    <% if flash.has?(:message)%>
-    <h3><%=flash[:message]%></h3></br>
-   <%end%>
 
      <div class="record-cover-large">
        <img src="<%=@record.cover%>">
@@ -12,7 +8,7 @@
   </div>
 </div> <!-- page header -->
 
-<div class="page-content">
+<div class="page-content show-container">
   <table class="record-table">
     <tr>
       <td><strong>Artist: </strong></td>
@@ -42,13 +38,13 @@
     <tr>
       <td><button class="button" id="edit-record-button"><a href="/records/<%=@record.slug%>/edit">
         Edit Record</a></button></td>
-      <td> <button class="button" id="add-or-remove-button" data-resource="delete" data-user="<%=current_user.slug%>" data-record-id="<%=@record.id%>">Remove From Collection</button></td>
+      <td> <button class="button" id="add-or-remove-button" data-resource="delete" data-user="<%=current_user.slug%>" data-record-id="<%=@record.id%>">Remove</button></td>
     </tr>
     <%else%>
     <tr >
       <td></td>
       <td>
-        <input type="submit" value="Add To Collection" class="button" id="add-or-remove-button" data-resource="new" data-user="<%=current_user.slug%>" data-record-id="<%=@record.id%>">
+        <input type="submit" value="Add" class="button" id="add-or-remove-button" data-resource="new" data-user="<%=current_user.slug%>" data-record-id="<%=@record.id%>">
       </td>
     </tr>
     <% end %>
@@ -58,7 +54,7 @@
 </div><!--page-content-->
 
 <script>
-  
+
   var addOrRemoveButton = document.getElementById('add-or-remove-button');
   var userSlug = addOrRemoveButton.getAttribute('data-user');
   var recordId = addOrRemoveButton.getAttribute('data-record-id');

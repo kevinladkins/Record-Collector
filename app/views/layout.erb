@@ -14,13 +14,14 @@
         <div id="logo">
          <h1>Record Collector</h1>
         </div>
+        <img src="/images/menu_32.png" id="menu-icon" onclick="toggleMenu()"/>
        <div id="user">
          <%if logged_in?%>
            <a href="/users/<%=current_user.slug%>"><%=current_user.username%></a><br class="desktop-break">
            <a href="/logout">Log Out</a>
          <%end%>
        </div>
-       <div id = "navigation">
+       <nav id="navigation">
          <%if logged_in?%>
            <a href="/">Your Collection</a>
            <a href="/records">RC Database</a>
@@ -28,12 +29,22 @@
            <a href="#" onclick="showLogin(event)">Log In</a>
            <a href="#" onclick="showSignup(event)">Sign Up</a>
          <%end%>
-       </div>
+       </nav>
      </div>
+     <%if logged_in?%>
+       <nav id="mobile-nav" class="disabled">
+         <ul>
+           <li><a href="/">Your Collection</a></li>
+           <li><a href="/records">RC Database</a></li>
+           <li><a href="/logout">Log Out</a></li>
+         </ul>
+       </nav>
+      <%end%>
      <div class="container">
          <%=yield%>
      </div>
      <footer id="footer">
+
      </footer>
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
      <script>
@@ -52,6 +63,11 @@
            }
            tables[position].className = "";
          }
+       }
+
+       function toggleMenu() {
+         var menu = document.getElementById('mobile-nav');
+         menu.classList.toggle('disabled');
        }
      </script>
   </body>

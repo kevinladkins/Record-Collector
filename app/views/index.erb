@@ -6,7 +6,7 @@
 
 </div>
 
-<div class="page-content index-container">
+<div class="page-content show-container">
   <div id="signup" class="disabled">
     <h1>Sign Up</h1>
     <form action="/signup" method="post" class="form">
@@ -49,26 +49,31 @@
       </div>
     </form>
   </div><!-- close login div-->
-  <% if flash.has?(:message)%>
-    <h3><%=flash[:message]%></h3></br>
-  <%end%>
+  <div id="message">
+    <% if flash.has?(:message)%>
+      <h3><%=flash[:message]%></h3></br>
+    <%end%>
+  </div>
 </div><!--close page content div -->
 
 <script>
 
   var login = document.getElementById("login");
   var signup = document.getElementById("signup");
+  var message = document.getElementById("message");
 
   function showLogin(e) {
     e.preventDefault;
     signup.className = 'disabled'
     login.className = '';
+    message.innerHTML = '';
   }
 
   function showSignup(e) {
     e.preventDefault;
     login.className = 'disabled'
     signup.className = ''
+    message.style.display = 'none'
   }
 
 </script>

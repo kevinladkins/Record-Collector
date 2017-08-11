@@ -24,7 +24,6 @@
    }
 
    #menu-icon {
-     display: unset;
      position: absolute;
      top: 8%;
      right: 5%;
@@ -233,9 +232,11 @@
 
 }
 
+@media only screen and (max-width: 920px) and (min-width: 685px) {
 
-
-@media only screen and (max-width: 768px) and (min-width: 685px) {
+  #menu-icon {
+    display: none;
+  }
 
   .container {
     width: 90%;
@@ -369,6 +370,95 @@
 
 }
 
-@media only screen and (min-width: 415px) and (max-width: 684px) {
+@media only screen and (min-width: 501px) and (max-width: 684px) {
+  #menu-icon {
+    display: none;
+  }
 
+  #header {
+    width: 100%;
+    left: 0;
+    height: 100px;
+  }
+
+  #header h1 {
+    font-size: 3em;
+    text-align: left;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  .page-header.index-container, .page-header.show-container {
+    float: none;
+    width: 90%;
+    height: 150px;
+    text-align: center;
+    margin-top: 50px;
+    padding: 0;
+    top: 50px;
+    z-index: 1;
+    background-color: white;
+  }
+
+  .page-header.show-container {
+    position: static;
+  }
+
+  .page-header.index-container h1, .page-header.show-container h1 {
+    margin: 0;
+    padding: 0;
+  }
+
+  .page-content.index-container, .page-content.show-container {
+    width: 80%;
+    margin: 100px auto 0;
+    float: none;
+    padding-left: 5px;
+    font-size: 1em;
+  }
+
+  .page-header .record-cover-large {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .page-header.edit-container {
+    float: none;
+    width: 100%;
+    position :static;
+    text-align: center;
+  }
+
+  .page-header.edit-container h1 {
+    margin-bottom: 0;
+  }
+
+  .page-header.edit-container .record-cover-large {
+    display: none
+  }
+
+  .page-content.edit-container {
+    width: 100%;
+    float: none;
+    padding-left: 0;
+    margin: 0 auto;
+  }
+
+  .desktop-break {
+    display: none;
+  }
+
+  #user {
+    padding: 0 5px 0 5px;
+    margin-right: 10%;
+  }
+
+}
+
+@media only screen and (min-width: 921px) {
+  #menu-icon {
+    display: none;
+  }
 }

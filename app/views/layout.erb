@@ -17,7 +17,7 @@
         <img src="/images/menu_32.png" id="menu-icon" onclick="toggleMenu()"/>
        <div id="user">
          <%if logged_in?%>
-           <a href="/users/<%=current_user.slug%>"><%=current_user.username%></a><br class="desktop-break">
+           <a href="/users/<%=current_user.slug%>" id="user-link"><%=current_user.username%></a><br class="desktop-break">
            <a href="/logout">Log Out</a>
          <%end%>
        </div>

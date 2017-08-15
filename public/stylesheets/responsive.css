@@ -24,14 +24,18 @@
    }
 
    #menu-icon {
+
      position: absolute;
      top: 8%;
      right: 5%;
+
    }
 
    #signup h1, #login h1 {
      display: none;
    }
+
+
 
    .add-record-form {
      margin: 0 auto;
@@ -205,7 +209,6 @@
   #mobile-nav {
     background: rgba(229, 98, 206, 0.7);
     z-index: 100;
-    /*border-radius: 10px;*/
   }
 
   #mobile-nav ul {
@@ -219,7 +222,6 @@
 
   #mobile-nav ul li a {
     text-decoration: none;
-    /*background-color: white;*/
     color: white;
     font-size: 1.2em;
   }
@@ -230,12 +232,20 @@
     z-index: 99;
   }
 
+  #mobile-nav ul li a:hover {
+    color: #ff1a1a;
+  }
+
 }
 
 @media only screen and (max-width: 920px) and (min-width: 685px) {
 
   #menu-icon {
     display: none;
+  }
+
+  #user-link {
+    margin-right: 5px;
   }
 
   .container {
@@ -371,6 +381,7 @@
 }
 
 @media only screen and (min-width: 501px) and (max-width: 684px) {
+
   #menu-icon {
     display: none;
   }
@@ -384,6 +395,10 @@
   #header h1 {
     font-size: 3em;
     text-align: left;
+  }
+
+  #user-link {
+    margin-right: 5px;
   }
 
   .container {

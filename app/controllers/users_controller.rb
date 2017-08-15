@@ -5,18 +5,6 @@ class UsersController < ApplicationController
 
   use Rack::Flash
 
-  post '/login' do
-    user = User.find_by(username: params[:username])
-    if user && user.authenticate(params[:password])
-      session[:user_id] = user.id
-      redirect "/users/#{user.slug}"
-    else
-      flash.now[:message] = "<h1 style='color: red;'>Incorrect username or password.</h1>"
-      erb :index
-    end
-  end
-
-
   post '/signup' do
     if params[:username] == "" || params[:password] == "" || params[:name] == "" || params[:email] == ""
       flash.now[:message] = "<h1 style='color: red;'>Please complete all fields.</h1>"
@@ -51,13 +39,5 @@ class UsersController < ApplicationController
     record.destroy
   end
 
-  get '/logout' do
-    if !logged_in?
-      redirect '/'
-    else
-      session.clear
-      redirect '/'
-    end
-  end
 
 end

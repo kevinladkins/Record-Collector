@@ -5,9 +5,7 @@ class RecordsController < ApplicationController
   enable :sessions
   set :session_secret, "secret"
 
-
-
-use Rack::Flash
+  use Rack::Flash
 
   get '/records' do
     verify_login

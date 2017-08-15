@@ -134,6 +134,27 @@ body {
   float: right;
 }
 
+
+/************************** SHOW PAGE *********************************/
+
+
+
+
+
+
+
+/************************ LANDING PAGE ********************************/
+
+#landing-head a {
+  text-decoration: none;
+  color: rgb(229, 98, 206);
+}
+
+#landing-head a:hover {
+  color: #ff1a1a;
+}
+
+
 /************************* IMAGES *************************************/
 
 .record-cover-large {
@@ -145,17 +166,6 @@ body {
   width: 100%;
   height: auto;
   display: inline-block;
-}
-
-/************************ LANDING PAGE ********************************/
-
-#landing-head a {
-  text-decoration: none;
-  color: rgb(229, 98, 206);
-}
-
-#landing-head a:hover {
-  color: #ff1a1a;
 }
 
 /************************ INDEX DISPLAY OPTIONS ***********************/

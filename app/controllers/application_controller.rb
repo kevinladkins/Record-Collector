@@ -1,6 +1,5 @@
 require_relative '../../config/environment'
-#require_relative './records_controller.rb'
-#require_relative './users_controller.rb'
+
 
 class ApplicationController < Sinatra::Base
   configure do
@@ -11,6 +10,15 @@ class ApplicationController < Sinatra::Base
   end
 
   @@artists, @@record_user, @@labels, @@records = Artist.all, RecordUser.all, Label.all, Record.all
+
+  not_found do
+    if !!logged_in?
+      redirect "/users/#{current_user.slug}"
+    else
+      redirect "/"
+    end
+  end
+
 
   get '/' do
     if logged_in?

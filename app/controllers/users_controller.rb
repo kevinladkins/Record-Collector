@@ -5,14 +5,6 @@ class UsersController < ApplicationController
 
   use Rack::Flash
 
-  get '/login' do
-    if logged_in?
-      redirect "/users/#{current_user.slug}"
-    else
-    erb :'/users/login'
-    end
-  end
-
   post '/login' do
     user = User.find_by(username: params[:username])
     if user && user.authenticate(params[:password])
@@ -24,13 +16,6 @@ class UsersController < ApplicationController
     end
   end
 
-  get '/signup' do
-    if logged_in?
-      redirect "/users/#{current_user.slug}"
-    else
-    erb :'/users/signup'
-    end
-  end
 
   post '/signup' do
     if params[:username] == "" || params[:password] == "" || params[:name] == "" || params[:email] == ""

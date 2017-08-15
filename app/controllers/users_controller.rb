@@ -26,18 +26,7 @@ class UsersController < ApplicationController
   end
 
 
-  post '/users/:slug/new' do
-    validate_user
-    record = Record.find(params[:record_id])
-    current_user.records << record
-    current_user.save
-  end
-
-  post '/users/:slug/delete' do
-    validate_user
-    record = RecordUser.find_by(user_id: current_user.id, record_id: params[:record_id])
-    record.destroy
-  end
+  
 
 
 end

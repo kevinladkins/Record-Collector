@@ -43,6 +43,14 @@ class RecordsController < ApplicationController
     erb :'records/show'
   end
 
+  post '/records/:slug/new' do
+    validate_user
+    record = Record.find(params[:record_id])
+    current_user.records << record
+    current_user.save
+  end
+
+
   get '/records/:slug/edit' do
     verify_login
     if !in_collection?(params[:slug])
@@ -63,6 +71,12 @@ class RecordsController < ApplicationController
     find_or_create(params, record)
     record.save
     redirect "/records/#{record.slug}"
+  end
+
+  post '/records/:slug/delete' do
+    validate_user
+    user_record = RecordUser.find_by(user_id: current_user.id, record_id: params[:record_id])
+    user_record.destroy
   end
 
   helpers do

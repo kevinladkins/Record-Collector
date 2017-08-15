@@ -65,7 +65,7 @@
   });
 
   function addOrRemoveRecord() {
-    var url = `/users/${userSlug}/${resource}`;
+    var url = `/records/${userSlug}/${resource}`;
     var request = new XMLHttpRequest();
     var postData = `record_id=${recordId}`;
     request.open('POST', url, true)

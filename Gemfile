@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 source "https://rubygems.org"
+ruby '2.3.0'
 
 gem 'sinatra'
 gem 'activerecord', :require => 'active_record'
@@ -7,12 +8,13 @@ gem 'sinatra-activerecord', :require => 'sinatra/activerecord'
 gem 'rake'
 gem 'rack-flash3'
 gem 'require_all'
-gem 'sqlite3'
+gem 'sqlite3', :group => :development
 gem 'thin'
 gem 'shotgun'
-gem 'pry'
+gem 'pry', :group => :development
+gem 'pg'
 gem 'bcrypt'
-gem "tux"
+gem 'tux', :group => :development
 gem 'dotenv'
 gem 'aws-sdk'
 

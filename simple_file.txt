@@ -1,2 +1,0 @@
-adding first line of textanother example of writing to the file
-Here we are with a new line

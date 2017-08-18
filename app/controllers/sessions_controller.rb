@@ -16,7 +16,6 @@ class SessionsController < ApplicationController
   end
 
   get '/logout' do
-    binding.pry
     if !logged_in?
       redirect '/'
     else

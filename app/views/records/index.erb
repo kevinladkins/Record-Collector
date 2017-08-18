@@ -37,7 +37,37 @@
    </table>
 
 
-  
+    <table class="disabled" id="artist-table">
+      <%@artists.all.order(name: :asc).uniq.each do |a|%>
+        <tr> <td></td> </tr>
+        <tr>
+          <td><h3><%=a.name%></h3></td>
+        </tr>
+      <%@records.all.where('artist_id = ?', '#{a.id}').order(name: :asc).each do |r|%>
+        <tr>
+          <td><a href="/records/<%=r.slug%>"><%=r.name%></a></td>
+        </tr>
+        <%end%>
+      <%end%>
+    </table>
+
+    <table class="disabled" id="label-table">
+    <%@labels.all.order(name: :asc).uniq.each do |l|%>
+      <tr> <td></td> </tr>
+      <tr>
+        <td colspan="2" class="label-header"><h3><%=l.name%></h3></td>
+        <!-- <td></td> -->
+      </tr>
+      <%@records.all.where('label_id = ?', '#{l.id}').order(name: :asc).each do |r|%>
+        <tr>
+          <td><a href="/records/<%=r.slug%>"><%=r.name%> </a></td>
+          <td><%=r.artist.name%></td>
+        </tr>
+        <tr> <td></td> </tr>
+        <%end%>
+      <%end%>
+    </table>
+
 </div> <!-- table -->
 <!--</div> <column -->
 <!-- <div class = "col-1-5"></div> -->

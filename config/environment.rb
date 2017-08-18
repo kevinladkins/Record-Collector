@@ -33,4 +33,3 @@ APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
 require 'dotenv'
 Dotenv.load
 require_all 'app'
-require 'pry'

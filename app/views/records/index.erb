@@ -1,9 +1,6 @@
 <div class="page-header index-container">
 
   <h1>Record Database</h1>
-    <!-- <% if flash.has?(:message)%>
-      <h3><%=flash[:message]%></h3>
-    <%end%> -->
 
 
     <div id="display-options">
@@ -46,7 +43,7 @@
         <tr>
           <td><h3><%=a.name%></h3></td>
         </tr>
-      <%@records.all.where("artist_id == #{a.id}").order(name: :asc).each do |r|%>
+      <%@records.all.where('artist_id = #{a.id}').order(name: :asc).each do |r|%>
         <tr>
           <td><a href="/records/<%=r.slug%>"><%=r.name%></a></td>
         </tr>
@@ -61,7 +58,7 @@
         <td colspan="2" class="label-header"><h3><%=l.name%></h3></td>
         <!-- <td></td> -->
       </tr>
-      <%@records.all.where("label_id == #{l.id}").order(name: :asc).each do |r|%>
+      <%@records.all.where('label_id = #{l.id}').order(name: :asc).each do |r|%>
         <tr>
           <td><a href="/records/<%=r.slug%>"><%=r.name%> </a></td>
           <td><%=r.artist.name%></td>

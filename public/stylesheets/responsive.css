@@ -249,6 +249,10 @@
     margin-right: 5px;
   }
 
+  .login-form-head {
+    display: none;
+  }
+
   .container {
     width: 90%;
     margin: 0 auto;
@@ -382,6 +386,11 @@
 }
 
 @media only screen and (min-width: 501px) and (max-width: 684px) {
+
+  .login-form-head {
+    display: none;
+  }
+
 
   #menu-icon {
     display: none;

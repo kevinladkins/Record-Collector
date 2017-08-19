@@ -43,10 +43,12 @@
         <tr>
           <td><h3><%=a.name%></h3></td>
         </tr>
-      <%@records.all.where('artist_id = ?', '#{a.id}').order(name: :asc).each do |r|%>
-        <tr>
-          <td><a href="/records/<%=r.slug%>"><%=r.name%></a></td>
-        </tr>
+      <%@records.all.order(name: :asc).each do |r|%>
+          <%if r.artist_id == a.id%>
+            <tr>
+              <td><a href="/records/<%=r.slug%>"><%=r.name%></a></td>
+            </tr>
+          <%end%>
         <%end%>
       <%end%>
     </table>
@@ -58,12 +60,14 @@
         <td colspan="2" class="label-header"><h3><%=l.name%></h3></td>
         <!-- <td></td> -->
       </tr>
-      <%@records.all.where('label_id = ?', '#{l.id}').order(name: :asc).each do |r|%>
-        <tr>
-          <td><a href="/records/<%=r.slug%>"><%=r.name%> </a></td>
-          <td><%=r.artist.name%></td>
-        </tr>
-        <tr> <td></td> </tr>
+      <%@records.all.order(name: :asc).each do |r|%>
+          <%if r.label_id == l.id%>
+            <tr>
+              <td><a href="/records/<%=r.slug%>"><%=r.name%> </a></td>
+              <td><%=r.artist.name%></td>
+            </tr>
+            <tr> <td></td> </tr>
+          <%end%>
         <%end%>
       <%end%>
     </table>

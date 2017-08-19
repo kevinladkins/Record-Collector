@@ -42,7 +42,7 @@
       <tr>
         <td><h3><%=a.name%></h3></td>
       </tr>
-    <%@user.records.where("artist_id == #{a.id}").order(name: :asc).each do |r|%>
+    <%@user.records.where("artist_id = #{a.id}").order(name: :asc).each do |r|%>
       <tr>
         <td><a href="/records/<%=r.slug%>"><%=r.name%></a></td>
       </tr>
@@ -57,7 +57,7 @@
         <td colspan="2" class="label-header"><h3><%=l.name%></h3></td>
       </tr>
       <tr> <td></td> </tr>
-    <%@user.records.where("label_id == #{l.id}").order(name: :asc).each do |r|%>
+    <%@user.records.where("label_id = #{l.id}").order(name: :asc).each do |r|%>
       <tr>
         <td><a href="/records/<%=r.slug%>"><%=r.name%>  </a></td>
         <td><%=r.artist.name%></br></td>

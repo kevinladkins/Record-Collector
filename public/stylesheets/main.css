@@ -135,13 +135,6 @@ body {
 }
 
 
-/************************** SHOW PAGE *********************************/
-
-
-
-
-
-
 
 /************************ LANDING PAGE ********************************/
 
@@ -174,9 +167,17 @@ body {
   display: none;
 }
 
+.display-mode {
+  color: rgb(229, 98, 206);
+}
+
 .display-mode-label  {
   display: inline-block;
   margin-right: 1em;
+}
+
+.display-mode-label:hover {
+  cursor: pointer;
 }
 
 .mode-selector {
@@ -184,17 +185,20 @@ body {
   left: -200px;
 }
 
-.display-mode-label:hover {
-  cursor: pointer;
-}
-
 .mode-selector:checked + label {
   color: #ff1a1a;
 }
 
-.display-mode {
+.index-container h3 a {
   color: rgb(229, 98, 206);
+  text-decoration: none;
 }
+
+.index-container h3 a:hover {
+  color: #ff1a1a;
+}
+
+
 
 
 /************************* MAIN TABLE STYLES **************************/
@@ -208,7 +212,6 @@ table {
 
 table a {
   text-decoration: none;
-  color: gray;
 }
 
 table a:hover {

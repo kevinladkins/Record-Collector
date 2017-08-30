@@ -58,7 +58,6 @@
       <tr> <td></td> </tr>
       <tr>
         <td colspan="2" class="label-header"><h3><%=l.name%></h3></td>
-        <!-- <td></td> -->
       </tr>
       <%@records.all.order(name: :asc).each do |r|%>
           <%if r.label_id == l.id%>
@@ -72,6 +71,4 @@
       <%end%>
     </table>
 
-</div> <!-- table -->
-<!--</div> <column -->
-<!-- <div class = "col-1-5"></div> -->
+</div> <!-- page-content -->

@@ -212,6 +212,7 @@ table {
 
 table a {
   text-decoration: none;
+  color: black;
 }
 
 table a:hover {
